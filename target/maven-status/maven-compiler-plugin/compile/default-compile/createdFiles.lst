@@ -13,9 +13,11 @@ MarkedMod\patches\DefaultInsertPatch$Locator.class
 MarkedMod\relics\PlaceholderRelic2.class
 MarkedMod\patches\DefaultInsertPatch.class
 MarkedMod\cards\DefaultCommonAttack.class
+MarkedMod\cards\purple\GentlePulse.class
 MarkedMod\patches\relics\BottledPlaceholderField.class
 MarkedMod\cards\DefaultRarePower.class
 MarkedMod\cards\DefaultUncommonAttack.class
+MarkedMod\patches\powers\watcher\MarkPowerPatch.class
 MarkedMod\variables\DefaultCustomVariable.class
 MarkedMod\cards\DefaultRareAttack.class
 MarkedMod\characters\TheDefault$Enums.class

@@ -1,5 +1,6 @@
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\variables\DefaultSecondMagicNumber.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\powers\CommonPower.java
+D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\purple\GentlePulse.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\OrbSkill.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\events\IdentityCrisisEvent.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\purple\Acupuncture.java
@@ -18,6 +19,7 @@ D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\DefaultUnc
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\util\IDCheckDontTouchPls.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\relics\PlaceholderRelic.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\characters\TheDefault.java
+D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\patches\powers\watcher\MarkPowerPatch.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\CardTemplate.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\cards\DefaultUncommonSkill.java
 D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\patches\DefaultInsertPatch.java

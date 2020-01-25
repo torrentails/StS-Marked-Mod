@@ -60,7 +60,7 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
     boolean hasMark = false;
     while (powers.hasNext()) {
         AbstractPower power = (AbstractPower) powers.next();
-        if (power instanceof MarkPower) {
+        if (power.ID.equals("PathToVictoryPower")) {
             hasMark = true;
             break;
         }

@@ -23,7 +23,7 @@ public static final String IMG = makeCardPath(${NAME}.class.getSimpleName().toLo
 public static final String NAME = cardStrings.NAME;
 public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-private static final CardRarity RARITY = CardRarity.BASIC;
+private static final CardRarity RARITY = CardRarity.COMMON;
 private static final CardTarget TARGET = CardTarget.ENEMY;
 private static final CardType TYPE = CardType.ATTACK;
 

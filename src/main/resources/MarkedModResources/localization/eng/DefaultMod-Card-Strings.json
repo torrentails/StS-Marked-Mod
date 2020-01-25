@@ -61,7 +61,7 @@
 //  edit from here
   "MarkedMod:GentlePulse": {
     "NAME": "Gentle Pulse",
-    "DESCRIPTION": "All enemies loose HP equal to their Mark. NL Remove !M! Mark from all enemies."
+    "DESCRIPTION": "Remove !M! Mark from all enemies. NL All enemies loose HP equal to their Mark."
   },
   "MarkedMod:OneThousandNeedles": {
     "NAME": "One Thousand Needles",
