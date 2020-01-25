@@ -24,6 +24,7 @@ MarkedMod\orbs\DefaultOrb.class
 MarkedMod\relics\PlaceholderRelic.class
 MarkedMod\relics\BottledPlaceholderRelic.class
 MarkedMod\relics\DefaultClickableRelic.class
+MarkedMod\cards\purple\FirstStrike.class
 MarkedMod\cards\DefaultSecondMagicNumberSkill.class
 MarkedMod\cards\DefaultAttackWithVariable.class
 MarkedMod\cards\AbstractDynamicCard.class

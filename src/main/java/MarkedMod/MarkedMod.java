@@ -1,6 +1,7 @@
 package MarkedMod;
 
 import MarkedMod.cards.purple.Acupuncture;
+import MarkedMod.cards.purple.FirstStrike;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -417,6 +418,7 @@ public class MarkedMod
 
         // TODO: Add all the other cards
         BaseMod.addCard(new Acupuncture());
+        BaseMod.addCard(new FirstStrike());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -436,6 +438,7 @@ public class MarkedMod
         UnlockTracker.unlockCard(DefaultRarePower.ID);
 
         UnlockTracker.unlockCard(Acupuncture.ID);
+        UnlockTracker.unlockCard(FirstStrike.ID);
         
         logger.info("Done adding cards!");
     }

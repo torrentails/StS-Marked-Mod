@@ -53,5 +53,36 @@
   "MarkedMod:Acupuncture": {
     "NAME": "Acupuncture",
     "DESCRIPTION": "Deal !D! damage and apply !M! Mark."
+  },
+  "MarkedMod:FirstStrike": {
+    "NAME": "First Strike",
+    "DESCRIPTION": "If the target has no Mark, Apply !M! Mark."
+  },
+//  edit from here
+  "MarkedMod:GentlePulse": {
+    "NAME": "Gentle Pulse",
+    "DESCRIPTION": "All enemies loose HP equal to their Mark. NL Remove !M! Mark from all enemies."
+  },
+  "MarkedMod:OneThousandNeedles": {
+    "NAME": "One Thousand Needles",
+    "DESCRIPTION": "Apply !M! Mark. NL All enemies loose HP equal to their Mark. NL Whenever you change Stances, return this from the discard pile to your hand."
+  },
+  "MarkedMod:PinPointDefense": {
+    "NAME": "Pin Point Defense",
+    "DESCRIPTION": "Gain !B! block whenever you apply Mark. NL Apply 3 Mark whenever an enemy attacks you."
+  },
+  "MarkedMod:DanceOfDeath": {
+    "NAME": "Dance of Death",
+    "DESCRIPTION": "Unplayable. NL Retain. NL When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL Retain. NL When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand. NL Exhaust this at the end of your next turn."
+  },
+  "MarkedMod:NorthStar": {
+    "NAME": "North Star",
+    "DESCRIPTION": "Apply 1 Mark and all enemies loose HP equal to their Mark X times. End your turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 Mark and all enemies loose HP equal to their Mark X+1 times. End your turn. NL Exhaust."
+  },
+  "MarkedMod:BlockChi": {
+    "NAME": "Block Chi",
+    "DESCRIPTION": "Remove all Mark. If at least !M! Mark was removed, the target is stunned."
   }
 }
