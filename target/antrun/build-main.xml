@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="maven-antrun-" default="main"  >
 <target name="main">
-  <copy file="target/DefaultMod.jar" tofile="D:/games/steam/steamapps/common/SlayTheSpire/mods/DefaultMod.jar"/>
+  <copy file="target/MarkedMod.jar" tofile="D:/games/steam/steamapps/common/SlayTheSpire/mods/MarkedMod.jar"/>
 </target>
 </project>

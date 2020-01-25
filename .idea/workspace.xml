@@ -1,12 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51e1f9e7-b796-4b42-914e-1170e48fbc6e" name="Default Changelist" comment="" />
+    <list default="true" id="51e1f9e7-b796-4b42-914e-1170e48fbc6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/abstracts/AbstractCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/Acupuncture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Acupuncture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Acupuncture_p.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Acupuncture_p.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/DefaultMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/actions/UncommonPowerAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/actions/UncommonPowerAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/AbstractDefaultCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/AbstractDefaultCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/AbstractDynamicCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/AbstractDynamicCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/CardTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/CardTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultAttackWithVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultAttackWithVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultCommonAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultCommonPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultCommonSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultRareAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRareAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultRarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRarePower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultRareSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRareSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultSecondMagicNumberSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultSecondMagicNumberSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultUncommonAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonAttack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultUncommonPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/DefaultUncommonSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/cards/OrbSkill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/OrbSkill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/characters/TheDefault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/characters/TheDefault.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/events/IdentityCrisisEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/events/IdentityCrisisEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/orbs/DefaultOrb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/orbs/DefaultOrb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/patches/DefaultInsertPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/DefaultInsertPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/patches/relics/BottledPlaceholderField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/relics/BottledPlaceholderField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/potions/PlaceholderPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/potions/PlaceholderPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/powers/CommonPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/CommonPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/powers/RarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/RarePower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/relics/BottledPlaceholderRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/relics/BottledPlaceholderRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/relics/DefaultClickableRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/relics/DefaultClickableRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/relics/PlaceholderRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/relics/PlaceholderRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/relics/PlaceholderRelic2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/relics/PlaceholderRelic2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/util/IDCheckDontTouchPls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/util/IDCheckDontTouchPls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/util/TextureLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/util/TextureLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/variables/DefaultCustomVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/variables/DefaultCustomVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theDefault/variables/DefaultSecondMagicNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/variables/DefaultSecondMagicNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/DefaultMod.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/antrun/build-main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/antrun/build-main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/DefaultMod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/actions/UncommonPowerAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/AbstractDefaultCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/AbstractDynamicCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/CardTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultAttackWithVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultCommonAttack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultCommonPower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultCommonSkill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultRareAttack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultRarePower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultRareSkill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultSecondMagicNumberSkill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultUncommonAttack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultUncommonPower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/DefaultUncommonSkill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/cards/OrbSkill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/characters/TheDefault$Enums.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/characters/TheDefault.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/events/IdentityCrisisEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/orbs/DefaultOrb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/patches/DefaultInsertPatch$Locator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/patches/DefaultInsertPatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/patches/relics/BottledPlaceholderField$MakeStatEquivalentCopy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/patches/relics/BottledPlaceholderField.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/potions/PlaceholderPotion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/powers/CommonPower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/powers/RarePower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/relics/BottledPlaceholderRelic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/relics/DefaultClickableRelic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/relics/PlaceholderRelic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/relics/PlaceholderRelic2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/util/IDCheckDontTouchPls.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/util/TextureLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/variables/DefaultCustomVariable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefault/variables/DefaultSecondMagicNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/Cardback.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/bg_attack_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/bg_power_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/bg_skill_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/card_default_gray_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/1024/card_default_gray_orb.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/512/bg_attack_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/512/bg_power_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/512/bg_skill_default_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/512/card_default_gray_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/512/card_small_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/Badge.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Attack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Attack_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Attack_p.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Power.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Power_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Power_p.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Skill.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Skill_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/Skill_p.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/cards/beautifu -bouquet color by Studio 7042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/object1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/object2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/object3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.autosave.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/corpse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/main2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer1d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer2d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer4d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer5d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/layer6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/orb/vfx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/shoulder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/shoulder2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/skeleton.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/skeleton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/char/defaultCharacter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/charSelect/Button.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/charSelect/DefaultCharacterButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/charSelect/DefaultCharacterPortraitBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/charSelect/PortraitBG.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/events/Events.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/events/IdentityCrisisEvent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/events/IdentityCrisisEvent2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/orbs/default_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/powers/placeholder_power.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/powers/placeholder_power32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/powers/placeholder_power84.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/BottledPlaceholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/Relics.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/default_clickable_relic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/outline/BottledPlaceholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/outline/default_clickable_relic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/outline/placeholder_relic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/outline/placeholder_relic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/placeholder_relic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/relics/placeholder_relic2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/images/ui/missing_texture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Character-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Event-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Keyword-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Orb-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theDefaultResources/localization/eng/DefaultMod-Relic-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+    <option name="SCHEME" value="Project" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -16,6 +189,13 @@
     </option>
   </component>
   <component name="ProjectId" id="1Wsfq80hFZTj0RLknEOGdrG1QHA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn compile" />
@@ -95,5 +275,16 @@
       <updated>1579943410054</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -49,5 +49,9 @@
   "MarkedMod:OrbSkill": {
     "NAME": "Get Orb",
     "DESCRIPTION": "Channel 1 Default Orb."
+  },
+  "MarkedMod:Acupuncture": {
+    "NAME": "Acupuncture",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Mark."
   }
 }
