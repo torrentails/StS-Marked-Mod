@@ -3,6 +3,7 @@ package MarkedMod;
 import MarkedMod.cards.purple.Acupuncture;
 import MarkedMod.cards.purple.FirstStrike;
 import MarkedMod.cards.purple.GentlePulse;
+import MarkedMod.cards.purple.OneThousandNeedles;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -421,6 +422,7 @@ public class MarkedMod
         BaseMod.addCard(new Acupuncture());
         BaseMod.addCard(new FirstStrike());
         BaseMod.addCard(new GentlePulse());
+        BaseMod.addCard(new OneThousandNeedles());
         
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -442,6 +444,7 @@ public class MarkedMod
         UnlockTracker.unlockCard(Acupuncture.ID);
         UnlockTracker.unlockCard(FirstStrike.ID);
         UnlockTracker.unlockCard(GentlePulse.ID);
+        UnlockTracker.unlockCard(OneThousandNeedles.ID);
         
         logger.info("Done adding cards!");
     }

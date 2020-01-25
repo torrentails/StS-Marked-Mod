@@ -12,7 +12,10 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import static MarkedMod.MarkedMod.makeCardPath;
 
@@ -24,7 +27,7 @@ public static final String ID = MarkedMod.makeID(GentlePulse.class.getSimpleName
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 public static final String IMG = makeCardPath("Attack.png");
 // TODO: Why it no load!?
-// public static final String IMG = makeCardPath(FirstStrike.class.getSimpleName().toLowerCase() + ".png");
+// public static final String IMG = makeCardPath(FirstStrike.class.getSimpleName() + ".png");
 
 
 public static final String NAME = cardStrings.NAME;
@@ -65,18 +68,31 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
 
     Iterator monsters = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
     Iterator powers;
+    HashMap<AbstractMonster, AbstractPower> toRemove;
 
     while (monsters.hasNext()) {
         AbstractMonster m = (AbstractMonster) monsters.next();
 
         powers = m.powers.iterator();
+        toRemove = new HashMap<>();
 
         while (powers.hasNext()) {
             AbstractPower p = (AbstractPower) powers.next();
             if (p.ID.equals("PathToVictoryPower")) {
                 p.reducePower(this.magicNumber);
+
+                if (p.amount <= 0) {
+                    toRemove.put(m, p);
+                    // m.powers.remove(p);
+                }
             }
         }
+
+        for(Map.Entry<AbstractMonster, AbstractPower> entry : toRemove.entrySet()) {
+            entry.getKey().powers.remove(entry.getValue());
+        }
     }
+
+
 }
 }

@@ -21,6 +21,7 @@ MarkedMod\patches\powers\watcher\MarkPowerPatch.class
 MarkedMod\variables\DefaultCustomVariable.class
 MarkedMod\cards\DefaultRareAttack.class
 MarkedMod\characters\TheDefault$Enums.class
+MarkedMod\cards\purple\OneThousandNeedles.class
 MarkedMod\events\IdentityCrisisEvent.class
 MarkedMod\orbs\DefaultOrb.class
 MarkedMod\relics\PlaceholderRelic.class
