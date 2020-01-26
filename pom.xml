@@ -6,12 +6,13 @@
     <groupId>markedmod</groupId>
     <artifactId>MarkedMod</artifactId>
     <name>Marked Mod</name>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
     <description>Adds some more cards to the Ascetic relating to the Marked mechanic.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <SlayTheSpire.version>01-21-2020</SlayTheSpire.version>
         <ModTheSpire.version>3.15.0</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->

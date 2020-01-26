@@ -1,14 +1,13 @@
 package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.abstracts.AbstractCard;
+import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import java.util.Iterator;
@@ -17,7 +16,7 @@ import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class FirstStrike
-        extends AbstractCard {
+        extends AbstractMarkedCard {
 
 public static final String ID = MarkedMod.makeID(FirstStrike.class.getSimpleName());
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

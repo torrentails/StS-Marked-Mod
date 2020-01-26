@@ -1,8 +1,9 @@
 package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.abstracts.AbstractCard;
+import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,16 +13,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
 import static MarkedMod.MarkedMod.makeCardPath;
-
+import static MarkedMod.MarkedMod.logger;
 
 public class GentlePulse
-        extends AbstractCard {
+        extends AbstractMarkedCard {
 
 public static final String ID = MarkedMod.makeID(GentlePulse.class.getSimpleName());
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -67,32 +67,32 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
     triggerMarks();
 
     Iterator monsters = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-    Iterator powers;
-    HashMap<AbstractMonster, AbstractPower> toRemove;
+    // Iterator powers;
+    // HashMap<AbstractMonster, AbstractPower> toRemove;
 
     while (monsters.hasNext()) {
         AbstractMonster m = (AbstractMonster) monsters.next();
 
-        powers = m.powers.iterator();
-        toRemove = new HashMap<>();
+        this.addToBot(new ReducePowerAction(m, player, MarkPower.POWER_ID, this.magicNumber));
 
-        while (powers.hasNext()) {
-            AbstractPower p = (AbstractPower) powers.next();
-            if (p.ID.equals("PathToVictoryPower")) {
-                p.reducePower(this.magicNumber);
-
-                if (p.amount <= 0) {
-                    toRemove.put(m, p);
-                    // m.powers.remove(p);
-                }
-            }
-        }
-
-        for(Map.Entry<AbstractMonster, AbstractPower> entry : toRemove.entrySet()) {
-            entry.getKey().powers.remove(entry.getValue());
-        }
+        // powers = m.powers.iterator();
+        // toRemove = new HashMap<>();
+        //
+        // while (powers.hasNext()) {
+        //     AbstractPower p = (AbstractPower) powers.next();
+        //     if (p.ID.equals("PathToVictoryPower")) {
+        //         p.reducePower(this.magicNumber);
+        //
+        //         if (p.amount <= 0) {
+        //             toRemove.put(m, p);
+        //             // m.powers.remove(p);
+        //         }
+        //     }
+        // }
+        //
+        // for(Map.Entry<AbstractMonster, AbstractPower> entry : toRemove.entrySet()) {
+        //     entry.getKey().powers.remove(entry.getValue());
+        // }
     }
-
-
 }
 }

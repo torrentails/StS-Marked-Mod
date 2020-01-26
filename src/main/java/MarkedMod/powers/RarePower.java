@@ -1,5 +1,6 @@
 package MarkedMod.powers;
 
+import MarkedMod.cards.purple.Acupuncture;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -12,7 +13,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import MarkedMod.MarkedMod;
-import MarkedMod.cards.DefaultRareAttack;
 import MarkedMod.util.TextureLoader;
 
 public class RarePower extends AbstractPower implements CloneablePowerInterface {
@@ -26,10 +26,10 @@ public class RarePower extends AbstractPower implements CloneablePowerInterface 
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture(
             "MarkedModResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture(
-            "MarkedModResources/images/powers/placeholder_power32.png");
+private static final Texture tex32 = TextureLoader.getTexture(
+        "MarkedModResources/images/powers/placeholder_power32.png");
 
-    public RarePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+public RarePower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;
 
@@ -49,7 +49,7 @@ public class RarePower extends AbstractPower implements CloneablePowerInterface 
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        AbstractCard playCard = new DefaultRareAttack(); // Declare Card - the DefaultRareAttack card. We will name it 'playCard'.
+        AbstractCard playCard = new Acupuncture(); // Declare Card - the DefaultRareAttack card. We will name it 'playCard'.
         AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
 
         playCard.freeToPlayOnce = true; //Self Explanatory

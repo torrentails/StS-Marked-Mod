@@ -1,7 +1,7 @@
 package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.abstracts.AbstractCard;
+import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import static MarkedMod.MarkedMod.makeCardPath;
 
 
-public class Acupuncture extends AbstractCard {
+public class Acupuncture extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(Acupuncture.class.getSimpleName());
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

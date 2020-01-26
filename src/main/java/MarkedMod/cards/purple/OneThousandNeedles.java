@@ -1,7 +1,7 @@
 package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.abstracts.AbstractCard;
+import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -15,7 +15,7 @@ import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class OneThousandNeedles
-        extends AbstractCard {
+        extends AbstractMarkedCard {
 
 public static final String ID = MarkedMod.makeID(OneThousandNeedles.class.getSimpleName());
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
