@@ -6,7 +6,7 @@
     <groupId>markedmod</groupId>
     <artifactId>MarkedMod</artifactId>
     <name>Marked Mod</name>
-    <version>0.0.7</version>
+    <version>0.0.8</version>
     <description>Adds some more cards to the Ascetic relating to the Marked mechanic.</description>
 
     <properties>

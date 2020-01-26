@@ -17,7 +17,7 @@
   },
   "MarkedMod:PinPointDefense": {
     "NAME": "Pin Point Defense",
-    "DESCRIPTION": "Gain !B! block whenever you apply Mark. NL Apply 3 Mark whenever an enemy attacks you."
+    "DESCRIPTION": "Gain !B! Block whenever you apply Mark. NL Apply 3 Mark whenever an enemy deals attack damage to you."
   },
   "MarkedMod:DanceOfDeath": {
     "NAME": "Dance of Death",

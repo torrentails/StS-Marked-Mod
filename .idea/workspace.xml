@@ -2,66 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e1f9e7-b796-4b42-914e-1170e48fbc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/abstracts/AbstractCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/abstracts/AbstractMarkedCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/AbstractDefaultCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/AbstractDynamicCard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/CardTemplate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultAttackWithVariable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultCommonSkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRareAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRarePower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultRareSkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultSecondMagicNumberSkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonAttack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonPower.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/DefaultUncommonSkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/OrbSkill.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/Acupuncture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/Acupuncture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GentlePulse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GentlePulse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/characters/TheDefault.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/events/IdentityCrisisEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/RarePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/RarePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/variables/DefaultSecondMagicNumber.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MarkedMod.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/MarkedMod.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/abstracts/AbstractCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/AbstractDynamicCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/CardTemplate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultAttackWithVariable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultCommonAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultCommonSkill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultRareAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultRarePower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultRareSkill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultSecondMagicNumberSkill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultUncommonAttack.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultUncommonPower.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultUncommonSkill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/OrbSkill.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/Acupuncture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/Acupuncture.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GentlePulse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GentlePulse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/characters/TheDefault$Enums.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/characters/TheDefault.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/events/IdentityCrisisEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/RarePower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/RarePower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/variables/DefaultSecondMagicNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +52,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">

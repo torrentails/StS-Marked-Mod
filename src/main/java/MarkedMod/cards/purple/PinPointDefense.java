@@ -2,7 +2,10 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import MarkedMod.powers.watcher.ApplyMarkOnAttackPower;
+import MarkedMod.powers.watcher.GainBlockOnApplyMarkPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -30,8 +33,10 @@ private static final CardTarget TARGET = CardTarget.SELF;
 private static final CardType TYPE = CardType.POWER;
 
 private static final int COST = 2;
-private static final int BLOCK = 3;
+private static final int BLOCK = 2;
 private static final int UPGRADE_PLUS_BLOCK = 1;
+// TODO: New dynamic number
+private static final int MARK = 3;
 
 
 public PinPointDefense() {
@@ -52,9 +57,7 @@ public void upgrade() {
 
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {
-    if (monster != null) {
-        this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
-    }
-
+    this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackPower(player, MARK), MARK));
+    this.addToBot(new ApplyPowerAction(player, player, new GainBlockOnApplyMarkPower(player, this.block), this.block));
 }
 }
