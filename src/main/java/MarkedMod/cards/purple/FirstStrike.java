@@ -33,8 +33,8 @@ private static final CardTarget TARGET = CardTarget.ENEMY;
 private static final CardType TYPE = CardType.SKILL;
 
 private static final int COST = 0;
-private static final int MAGIC = 13;
-private static final int UPGRADE_MAGIC = 5;
+private static final int MAGIC = 9;
+private static final int UPGRADE_MAGIC = 4;
 
 
 public FirstStrike() {
@@ -52,6 +52,7 @@ public void upgrade() {
     }
 }
 
+// TODO: Make it unable to be played if it has no target and make it retain, clogging up the hand.
 
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {

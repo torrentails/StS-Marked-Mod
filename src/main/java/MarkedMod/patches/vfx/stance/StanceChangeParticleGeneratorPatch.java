@@ -14,24 +14,24 @@ import java.lang.reflect.Field;
             method = "update")
 public class StanceChangeParticleGeneratorPatch {
 
-    public static SpireReturn Prefix(StanceChangeParticleGenerator instance) {
+    public static SpireReturn Prefix(StanceChangeParticleGenerator inst) {
 
         try
         {
-            Field stanceIdField = instance.getClass().getDeclaredField("stanceId");
+            Field stanceIdField = inst.getClass().getDeclaredField("stanceId");
             stanceIdField.setAccessible(true);
 
-            if (stanceIdField.get(instance).toString().equals(DanceOfDeathStance.STANCE_ID)) {
+            if (stanceIdField.get(inst).toString().equals(DanceOfDeathStance.STANCE_ID)) {
 
-                Field xField = instance.getClass().getDeclaredField("x");
+                Field xField = inst.getClass().getDeclaredField("x");
                 xField.setAccessible(true);
 
                 for(int i = 0; i < 10; ++i)
                 {
-                    AbstractDungeon.effectsQueue.add(new DanceOfDeathStanceChangeParticle((Float) xField.get(instance)));
+                    AbstractDungeon.effectsQueue.add(new DanceOfDeathStanceChangeParticle((Float) xField.get(inst)));
                 }
 
-                instance.isDone = true;
+                inst.isDone = true;
 
                 return SpireReturn.Return(null);
 

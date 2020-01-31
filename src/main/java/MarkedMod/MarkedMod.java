@@ -1,6 +1,8 @@
 package MarkedMod;
 
+import MarkedMod.cards.colorless.Tag;
 import MarkedMod.cards.purple.*;
+import MarkedMod.potions.watcher.BlackLotusJuice;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -68,6 +70,7 @@ public class MarkedMod
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
+
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
     // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
@@ -95,6 +98,9 @@ public class MarkedMod
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+    // public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(51.0f, 51.0f, 51.0f); // Orange-ish Red
+    // public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(68.0f, 68.0f, 68.0f); // Near White
+    // public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(238.0f, 238.0f, 238.0f); // Super Dark Red/Brown
     
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
     // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
@@ -313,7 +319,7 @@ public class MarkedMod
         // Class Specific Potion. If you want your potion to not be class-specific,
         // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
         // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(PlaceholderPotion.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, PlaceholderPotion.POTION_ID, AbstractPlayer.PlayerClass.WATCHER);
+        BaseMod.addPotion(BlackLotusJuice.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, BlackLotusJuice.POTION_ID, AbstractPlayer.PlayerClass.WATCHER);
         
         logger.info("Done editing potions");
     }
@@ -338,6 +344,8 @@ public class MarkedMod
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
+
+        receiveEditPotions();
     }
     
     // ================ /ADD RELICS/ ===================
@@ -363,6 +371,7 @@ public class MarkedMod
         BaseMod.addCard(new GentlePulse());
         BaseMod.addCard(new OneThousandNeedles());
         BaseMod.addCard(new PinPointDefense());
+        BaseMod.addCard(new Tag());
         
         logger.info("Making sure the cards are unlocked.");
 
@@ -371,6 +380,7 @@ public class MarkedMod
         UnlockTracker.unlockCard(GentlePulse.ID);
         UnlockTracker.unlockCard(OneThousandNeedles.ID);
         UnlockTracker.unlockCard(PinPointDefense.ID);
+        UnlockTracker.unlockCard(Tag.ID);
         
         logger.info("Done adding cards!");
     }
@@ -412,12 +422,16 @@ public class MarkedMod
         // CharacterStrings
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
-        
+
         // OrbStrings
         BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+                                      getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
+
+        // StanceStrings
+        BaseMod.loadCustomStringsFile(StanceStrings.class,
+                                      getModID() + "Resources/localization/eng/Stance-Strings.json");
         
-        logger.info("Done edittting strings");
+        logger.info("Done editing strings");
     }
     
     // ================ /LOAD THE TEXT/ ===================

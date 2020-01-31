@@ -5,10 +5,13 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 import javassist.CtBehavior;
 
 import java.lang.reflect.Field;
+
+import static MarkedMod.MarkedMod.logger;
 
 
 @SpirePatch(clz = StanceAuraEffect.class,
@@ -23,15 +26,20 @@ public class StanceAuraEffectPatch
 
             try
             {
-                Field colorField = effect.getClass().getDeclaredField("color");
+                Field colorField = AbstractGameEffect.class.getDeclaredField("color");
                 colorField.setAccessible(true);
 
-                Float colorValue = MathUtils.random(0.1F, 0.3F);
-                colorField.set(effect, new Color(colorValue, colorValue, colorValue, 0.0F));
+                float[] colors = DanceOfDeathStance.COLORS;
+                colorField.set(effect, new Color(
+                        MathUtils.random(colors[0], colors[1]),
+                        MathUtils.random(colors[2], colors[3]),
+                        MathUtils.random(colors[4], colors[5]),
+                        0.0F));
 
             } catch (NoSuchFieldException | IllegalAccessException e)
             {
-                e.printStackTrace();
+                logger.warn("Can't access color field on AbstractGameEffect");
+                // e.printStackTrace();
             }
         }
     }

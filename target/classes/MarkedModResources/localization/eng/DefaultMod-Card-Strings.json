@@ -17,7 +17,7 @@
   },
   "MarkedMod:PinPointDefense": {
     "NAME": "Pin Point Defense",
-    "DESCRIPTION": "Apply 3 Mark whenever an enemy deals attack damage to you. NL Gain !B! Block whenever you apply Mark."
+    "DESCRIPTION": "Apply 3 Mark whenever an enemy deals damage to you. NL Gain !B! Block whenever you apply Mark."
   },
   "MarkedMod:DanceOfDeath": {
     "NAME": "Dance of Death",
@@ -32,5 +32,9 @@
   "MarkedMod:BlockChi": {
     "NAME": "Block Chi",
     "DESCRIPTION": "Remove all Mark. If at least !M! Mark was removed, the target is stunned."
+  },
+  "MarkedMod:Tag": {
+    "NAME": "Tag",
+    "DESCRIPTION": "Apply !M! Mark."
   }
 }

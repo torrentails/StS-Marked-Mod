@@ -2,22 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e1f9e7-b796-4b42-914e-1170e48fbc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/stances/AbstractStancePatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceChangeParticleGeneratorPatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/stances/DanceOfDeathStance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/abstracts/AbstractCustomStance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/colorless/Tag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/actions/common/GainBlockActionPatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/monsters/AbstractMonsterPatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/potions/watcher/BlackLotusJuice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackedPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Stance-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/stances/AbstractStancePatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/stances/AbstractStancePatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceChangeParticleGeneratorPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceChangeParticleGeneratorPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/stances/DanceOfDeathStance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/stances/DanceOfDeathStance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MarkedMod.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/MarkedMod.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/AbstractDefaultCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/DefaultCommonPower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/stances/AbstractStancePatch$atDamageGive.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/stances/AbstractStancePatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/stances/AbstractStancePatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch$Locator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch$Locator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceChangeParticleGeneratorPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceChangeParticleGeneratorPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/ApplyMarkOnAttackPower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/stances/DanceOfDeathStance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/stances/DanceOfDeathStance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +60,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Purple Card" />
         <option value="Class" />
+        <option value="Purple Card" />
       </list>
     </option>
     <option name="SCHEME" value="Project" />
@@ -50,7 +82,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\java\MarkedMod\patches\powers" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">

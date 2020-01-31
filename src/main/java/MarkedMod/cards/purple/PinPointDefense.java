@@ -2,15 +2,13 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
-import MarkedMod.powers.watcher.ApplyMarkOnAttackPower;
+import MarkedMod.powers.watcher.ApplyMarkOnAttackedPower;
 import MarkedMod.powers.watcher.GainBlockOnApplyMarkPower;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import static MarkedMod.MarkedMod.makeCardPath;
 
@@ -57,7 +55,7 @@ public void upgrade() {
 
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {
-    this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackPower(player, MARK), MARK));
+    this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackedPower(player, MARK), MARK));
     this.addToBot(new ApplyPowerAction(player, player, new GainBlockOnApplyMarkPower(player, this.block), this.block));
 }
 }

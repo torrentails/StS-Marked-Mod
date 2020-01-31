@@ -26,29 +26,4 @@ public class AbstractStancePatch
             return SpireReturn.Continue();
         }
     }
-
-    @SpirePatch(clz = AbstractStance.class,
-                method = "atDamageGive",
-                paramtypez = {
-                    float.class,
-                    DamageInfo.DamageType.class,
-                })
-    public static class atDamageGive
-    {
-        public static SpireReturn<Float> Prefix(AbstractStance instance, float damage, DamageInfo.DamageType type) {
-            if (damage > 0 && type == DamageInfo.DamageType.NORMAL)
-            {
-                logger.info("Triggered 'atDamageGive' \n Damage: " + String.valueOf(damage) + " | DamageType: " + type.toString());
-                try
-                {
-                    throw new Exception();
-                } catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-            }
-
-            return SpireReturn.Continue();
-        }
-    }
 }

@@ -2,7 +2,7 @@
 #parse("File Header.java")
 
 import MarkedMod.MarkedMod;
-import MarkedMod.abstracts.AbstractCard;
+import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import static MarkedMod.MarkedMod.makeCardPath;
 
 
-public class ${NAME} extends AbstractCard {
+public class ${NAME} extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(${NAME}.class.getSimpleName());
 private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

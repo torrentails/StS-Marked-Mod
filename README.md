@@ -1,1 +1,1 @@
-"# StS-Marked-Mod" 
+# Marked Mod for Slay the Spire
