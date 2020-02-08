@@ -63,7 +63,7 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
 }
 
 
-public void triggerExhaustedCardsOnStanceChange(AbstractStance newStance) {
-    this.addToBot(new DiscardToHandAction(this));// 40
+public void triggerOnScry() {
+    this.addToBot(new DiscardToHandAction(this));
 }
 }

@@ -2,7 +2,9 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import MarkedMod.powers.watcher.GracefulMovementsPower;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -18,31 +20,30 @@ public class GracefulMovements
 
     public static final String ID = MarkedMod.makeID(GracefulMovements.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(GracefulMovements.class.getSimpleName() + ".png");
+    public static final String IMG = makeCardPath("Attack.png");
+    // TODO: Why it no load!?
+    //public static final String IMG = makeCardPath(GracefulMovements.class.getSimpleName() + ".png");
 
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC = 1;
     private static final int UPGRADE_MAGIC = 1;
+
+    private boolean next_upgrade_magic;
 
 
     public GracefulMovements()
     {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        baseDamage = DAMAGE;
-        baseBlock = BLOCK;
         baseMagicNumber = magicNumber = MAGIC;
+        this.next_upgrade_magic = false;
     }
 
 
@@ -52,9 +53,14 @@ public class GracefulMovements
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            // For mods that enable multiple upgrades.
+            if (this.next_upgrade_magic) {
+                upgradeMagicNumber(UPGRADE_MAGIC);
+            } else {
+                this.next_upgrade_magic = true;
+            }
+            this.isInnate = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
@@ -63,9 +69,6 @@ public class GracefulMovements
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        if (monster != null)
-        {
-            this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
-        }
+        this.addToBot(new ApplyPowerAction(player, player, new GracefulMovementsPower(player, this.magicNumber), this.magicNumber));
     }
 }

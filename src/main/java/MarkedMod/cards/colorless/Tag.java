@@ -3,10 +3,12 @@ package MarkedMod.cards.colorless;
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import static MarkedMod.MarkedMod.makeCardPath;
@@ -34,7 +36,7 @@ public class Tag
 
     private static final int COST = 0;
     private static final int MAGIC = 2;
-    private static final int UPGRADE_MAGIC = 1;
+    private static final int UPGRADE_MAGIC = 2;
 
 
     public Tag()
@@ -64,5 +66,7 @@ public class Tag
         {
             this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
         }
+        // I'm a dumbass, forgot to actually make Tag do anything :p
+        applyMark(player, monster, this.magicNumber);
     }
 }

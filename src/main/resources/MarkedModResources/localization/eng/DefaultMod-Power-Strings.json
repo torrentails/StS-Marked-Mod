@@ -14,5 +14,9 @@
 "MarkedMod:GainBlockOnApplyMarkPower": {
         "NAME": "Pin Point Counter",
         "DESCRIPTIONS": ["Apply ", " *Mark whenever an enemy deals attack damage to you."]
+},
+"MarkedMod:GracefulMovementsPower": {
+        "NAME": "Graceful Movements",
+        "DESCRIPTIONS": ["At the start of your turn, add ", " Tag to your hand.", " Tags to your hand."]
 }
 }

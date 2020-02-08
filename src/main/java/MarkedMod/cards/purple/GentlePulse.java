@@ -38,13 +38,11 @@ private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
 private static final CardType TYPE = CardType.SKILL;
 
 private static final int COST = 0;
-private static final int MAGIC = 8;
-private static final int UPGRADE_MAGIC = -2;
 
 
 public GentlePulse() {
     super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    baseMagicNumber = magicNumber = MAGIC;
+    this.exhaust = true;
 }
 
 
@@ -52,7 +50,8 @@ public GentlePulse() {
 public void upgrade() {
     if (!upgraded) {
         upgradeName();
-        upgradeMagicNumber(UPGRADE_MAGIC);
+        this.selfRetain = true;
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 }
@@ -65,34 +64,5 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
     }
 
     triggerMarks();
-
-    Iterator monsters = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-    // Iterator powers;
-    // HashMap<AbstractMonster, AbstractPower> toRemove;
-
-    while (monsters.hasNext()) {
-        AbstractMonster m = (AbstractMonster) monsters.next();
-
-        this.addToBot(new ReducePowerAction(m, player, MarkPower.POWER_ID, this.magicNumber));
-
-        // powers = m.powers.iterator();
-        // toRemove = new HashMap<>();
-        //
-        // while (powers.hasNext()) {
-        //     AbstractPower p = (AbstractPower) powers.next();
-        //     if (p.ID.equals("PathToVictoryPower")) {
-        //         p.reducePower(this.magicNumber);
-        //
-        //         if (p.amount <= 0) {
-        //             toRemove.put(m, p);
-        //             // m.powers.remove(p);
-        //         }
-        //     }
-        // }
-        //
-        // for(Map.Entry<AbstractMonster, AbstractPower> entry : toRemove.entrySet()) {
-        //     entry.getKey().powers.remove(entry.getValue());
-        // }
-    }
 }
 }

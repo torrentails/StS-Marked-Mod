@@ -3,6 +3,7 @@ package MarkedMod;
 import MarkedMod.cards.colorless.Tag;
 import MarkedMod.cards.purple.*;
 import MarkedMod.potions.watcher.BlackLotusJuice;
+import MarkedMod.stances.DanceOfDeathStance;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
@@ -12,6 +13,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -93,11 +96,13 @@ public class MarkedMod
     // Colors (RGB)
     // Character Color
     public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
-    
-    // Potion Colors in RGB
-    public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f); // Super Dark Red/Brown
+
+    public static final float[] STANCE_COLORS = {0.2125f, 0.4125f, 0.68125f, 0.88125f, 0.36875f, 0.56875f};
+
+
+    public static final Color PLACEHOLDER_POTION_LIQUID = getColor(255.0f, null, null); // Orange-ish Red
+    public static final Color PLACEHOLDER_POTION_HYBRID = getColor(null,255.0f, null); // Near White
+    public static final Color PLACEHOLDER_POTION_SPOTS = getColor(null, null, 255.0f); // Super Dark Red/Brown
     // public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(51.0f, 51.0f, 51.0f); // Orange-ish Red
     // public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(68.0f, 68.0f, 68.0f); // Near White
     // public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(238.0f, 238.0f, 238.0f); // Super Dark Red/Brown
@@ -334,12 +339,12 @@ public class MarkedMod
         logger.info("Adding relics");
         
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        BaseMod.addRelicToCustomPool(new PlaceholderRelic(), AbstractCard.CardColor.PURPLE);
-        BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), AbstractCard.CardColor.PURPLE);
-        BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCard.CardColor.PURPLE);
+        // BaseMod.addRelicToCustomPool(new PlaceholderRelic(), AbstractCard.CardColor.PURPLE);
+        // BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), AbstractCard.CardColor.PURPLE);
+        // BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCard.CardColor.PURPLE);
         
         // This adds a relic to the Shared pool. Every character can find this relic.
-        BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
+        // BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
@@ -371,6 +376,9 @@ public class MarkedMod
         BaseMod.addCard(new GentlePulse());
         BaseMod.addCard(new OneThousandNeedles());
         BaseMod.addCard(new PinPointDefense());
+        BaseMod.addCard(new GracefulMovements());
+        BaseMod.addCard(new NorthStar());
+
         BaseMod.addCard(new Tag());
         
         logger.info("Making sure the cards are unlocked.");
@@ -380,6 +388,9 @@ public class MarkedMod
         UnlockTracker.unlockCard(GentlePulse.ID);
         UnlockTracker.unlockCard(OneThousandNeedles.ID);
         UnlockTracker.unlockCard(PinPointDefense.ID);
+        UnlockTracker.unlockCard(GracefulMovements.ID);
+        UnlockTracker.unlockCard(NorthStar.ID);
+
         UnlockTracker.unlockCard(Tag.ID);
         
         logger.info("Done adding cards!");
@@ -458,6 +469,22 @@ public class MarkedMod
                 //  getModID().toLowerCase() makes your keyword mod specific (it won't show up in other cards that use that word)
             }
         }
+    }
+
+    private static Color getColor(Float r, Float g, Float b) {
+        if (r == null) {
+            r = MathUtils.random(STANCE_COLORS[0], STANCE_COLORS[1]);
+        }
+
+        if (g == null) {
+            g = MathUtils.random(STANCE_COLORS[2], STANCE_COLORS[3]);
+        }
+
+        if (b == null) {
+            b = MathUtils.random(STANCE_COLORS[4], STANCE_COLORS[5]);
+        }
+
+        return new Color(r,g,b,1.0f);
     }
     
     // ================ /LOAD THE KEYWORDS/ ===================    

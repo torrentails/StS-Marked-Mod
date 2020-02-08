@@ -2,9 +2,11 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import MarkedMod.cards.colorless.Tag;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,14 +37,15 @@ private static final CardType TYPE = CardType.ATTACK;
 private static final int COST = 1;
 private static final int DAMAGE = 3;
 private static final int UPGRADE_PLUS_DMG = 2;
-private static final int MAGIC = 3;
-private static final int UPGRADE_MAGIC = 2;
+// private static final int MAGIC = 3;
+// private static final int UPGRADE_MAGIC = 2;
 
 
 public Acupuncture() {
     super(ID, IMG, COST, TYPE, RARITY, TARGET);
     baseDamage = DAMAGE;
-    baseMagicNumber = magicNumber = MAGIC;
+    // baseMagicNumber = magicNumber = MAGIC;
+    this.cardsToPreview = new Tag();
 }
 
 
@@ -51,7 +54,7 @@ public void upgrade() {
     if (!upgraded) {
         upgradeName();
         upgradeDamage(UPGRADE_PLUS_DMG);
-        upgradeMagicNumber(UPGRADE_MAGIC);
+        // upgradeMagicNumber(UPGRADE_MAGIC);
         initializeDescription();
     }
 }
@@ -59,12 +62,13 @@ public void upgrade() {
 
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {
-    if (monster != null) {// 36
-        this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));// 37
-    }
+    // if (monster != null) {
+    //     this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
+    // }
     AbstractDungeon.actionManager.addToBottom(
         new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
 
-    applyMark(player, monster, this.magicNumber);
+    // applyMark(player, monster, this.magicNumber);
+    this.addToBot(new MakeTempCardInHandAction(new Tag(), 1));
 }
 }

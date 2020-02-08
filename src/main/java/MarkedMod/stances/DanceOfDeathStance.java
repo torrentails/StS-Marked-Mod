@@ -31,7 +31,8 @@ public class DanceOfDeathStance extends AbstractCustomStance
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTIONS = stanceString.DESCRIPTION;
     private static final int MARK = 2;
-    public static float[] COLORS = {0.2125f, 0.4125f, 0.68125f, 0.88125f, 0.36875f, 0.56875f};
+    // TODO: Refactor this to be direct to MarkedMod
+    public static float[] COLORS = MarkedMod.STANCE_COLORS;
     private static float TIMER = 0.1F;
     private static long sfxId = -1L;
 

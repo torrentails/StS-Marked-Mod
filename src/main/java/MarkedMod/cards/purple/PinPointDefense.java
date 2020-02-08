@@ -31,15 +31,14 @@ private static final CardTarget TARGET = CardTarget.SELF;
 private static final CardType TYPE = CardType.POWER;
 
 private static final int COST = 2;
-private static final int BLOCK = 2;
-private static final int UPGRADE_PLUS_BLOCK = 1;
-// TODO: New dynamic number
+private static final int MAGIC = 2;
+private static final int UPGRADE_PLUS_MAGIC = 1;
 private static final int MARK = 3;
 
 
 public PinPointDefense() {
     super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    baseBlock = BLOCK;
+    baseMagicNumber = magicNumber = MAGIC;
 }
 
 
@@ -47,7 +46,7 @@ public PinPointDefense() {
 public void upgrade() {
     if (!upgraded) {
         upgradeName();
-        upgradeBlock(UPGRADE_PLUS_BLOCK);
+        upgradeBlock(UPGRADE_PLUS_MAGIC);
         initializeDescription();
     }
 }
@@ -56,6 +55,6 @@ public void upgrade() {
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {
     this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackedPower(player, MARK), MARK));
-    this.addToBot(new ApplyPowerAction(player, player, new GainBlockOnApplyMarkPower(player, this.block), this.block));
+    this.addToBot(new ApplyPowerAction(player, player, new GainBlockOnApplyMarkPower(player, this.magicNumber), this.magicNumber));
 }
 }

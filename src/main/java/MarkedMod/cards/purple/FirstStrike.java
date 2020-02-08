@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import java.util.Iterator;
@@ -52,27 +53,24 @@ public void upgrade() {
     }
 }
 
-// TODO: Make it unable to be played if it has no target and make it retain, clogging up the hand.
-
 @Override
 public void use(AbstractPlayer player, AbstractMonster monster) {
-    Iterator powers = monster.powers.iterator();
-    boolean hasMark = false;
-    while (powers.hasNext()) {
-        AbstractPower power = (AbstractPower) powers.next();
-        if (power.ID.equals("PathToVictoryPower")) {
-            hasMark = true;
-            break;
-        }
-    }
-
-    // TODO: Say something if the enemy does have Mark
-    if (!hasMark) {
-        if (monster != null) {
-            this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
-        }
+    if (monster != null && !monster.hasPower(MarkPower.POWER_ID)){
+        this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
 
         applyMark(player, monster, this.magicNumber);
     }
 }
+
+
+    // TODO: Say something if the enemy does have Mark
+    @Override
+    public boolean canUse(AbstractPlayer player, AbstractMonster monster) {
+        if (monster == null || (this.cardPlayable(monster) && !monster.hasPower(MarkPower.POWER_ID))) {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+
+        return true;
+    }
 }

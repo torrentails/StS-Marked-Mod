@@ -1,0 +1,112 @@
+Ascetic cards
+-------------
+__Acupuncture
+    attack
+    common
+    1
+    normal
+    0:Deal [3:2] damage. NL Add a Tag to your hand.
+
+First Strike
+	skill
+	common
+	0
+	normal
+	0:If the target has no Mark, Apply [9:4] Mark.
+
+Gentle Pulse
+	skill
+	common
+	0
+	normal
+	0:All enemies loose HP equal to their Mark.
+	  Exhaust
+	1:Retain
+	  All enemies loose HP equal to their Mark.
+	  Exhaust
+
+One Thousand Needles
+	skill
+	uncommon
+	1
+	0:Apply [2:2] Mark.
+	  All enemies loose HP equal to their Mark.
+	  Whenever you change Scry, return this from the discard pile to your hand.
+	------------
+	0:All enemies loose HP equal to their Mark.
+	  Add a Tag to your hand.
+	  Whenever you change Stances, return this from the discard pile to your hand.
+
+Pin Point Defense
+	power
+	uncommon
+	2
+	0:Apply 3 Mark whenever an enemy deals attack damage to you.
+	  Gain [3:1] Block whenever you apply Mark.
+
+Graceful Movements
+	power
+	uncommon
+	1
+	0:Add [1:0.5 (rounded down)] Tag[s] to your hand at the start of each turn.
+	1:Innate
+	  Add [1:0.5 (rounded down)] Tag[s] to your hand at the start of each turn.
+
+Dance of Death
+	skill
+	rare
+	-
+	0:Unplayable.
+	  Retain.
+	  When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand.
+	1:Unplayable.
+	  Retain.
+	  When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand.
+	  If this card is in your hand at the start of your turn, it gains Etherial.
+
+North Star
+	skill
+	rare
+	X
+	normal
+	0:Apply 1 Mark and all enemies loose HP equal to their Mark [x:1] times. End your turn.
+	  Exhaust.
+
+Block Chi
+	skill
+	rare
+	1
+	normal
+	0:Remove all Mark. If at least [30:-10] Mark was removed, the target is stunned.
+
+
+Tag
+	skill
+	common
+	0
+	special
+	0:Apply [2:2] Mark. NL Exhaust
+
+
+Black Lotus Juice
+	potion
+	rare
+	Enter Dance of Death.
+
+
+Acupuncture Kit
+	relic
+	Uncommon
+	Gain 1 Intangible upon entering Dance of Death Stance.
+
+
+Guide to the Body
+	relic
+	common
+	Whenever you apply *Mark, apply 1 more.
+
+
+Dance of Death <stance>
+	Enemies take additional damage from attacks equal to half their Mark. Apply 2 Mark each time you deal attack damage to an enemy. Upon entering this stance, loose all of your Block. You cannot gain Block while in this stance. Exit this Stance at the start of your next turn.
+	-----------------
+	Add a Tag to your hand whenever you play a card that started the fight in your deck. Enemies take additional damage from attacks equal to half their Mark. Upon entering this stance, loose all of your Block. You cannot gain Block while in this stance. Exit this Stance at the start of your next turn.
