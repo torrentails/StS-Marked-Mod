@@ -3,23 +3,22 @@ package MarkedMod;
 import MarkedMod.cards.colorless.Tag;
 import MarkedMod.cards.purple.*;
 import MarkedMod.potions.watcher.BlackLotusJuice;
-import MarkedMod.stances.DanceOfDeathStance;
+import MarkedMod.util.IDCheck;
+import MarkedMod.util.TextureLoader;
+import MarkedMod.variables.DefaultCustomVariable;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
@@ -28,44 +27,12 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import MarkedMod.potions.PlaceholderPotion;
-import MarkedMod.relics.BottledPlaceholderRelic;
-import MarkedMod.relics.DefaultClickableRelic;
-import MarkedMod.relics.PlaceholderRelic;
-import MarkedMod.relics.PlaceholderRelic2;
-import MarkedMod.util.IDCheckDontTouchPls;
-import MarkedMod.util.TextureLoader;
-import MarkedMod.variables.DefaultCustomVariable;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
-// DON'T MASS RENAME/REFACTOR
-// Please don't just mass replace "MarkedMod" with "yourMod" everywhere.
-// It'll be a bigger pain for you. You only need to replace it in 3 places.
-// I comment those places below, under the place where you set your ID.
-
-//TODO: FIRST THINGS FIRST: RENAME YOUR PACKAGE AND ID NAMES FIRST-THING!!!
-// Right click the package (Open the project pane on the left. Folder with black dot on it. The name's at the very top) -> Refactor -> Rename, and name it whatever you wanna call your mod.
-// Scroll down in this file. Change the ID from "MarkedMod:" to "yourModName:" or whatever your heart desires (don't use spaces). Dw, you'll see it.
-// In the JSON strings (resources>localization>eng>[all them files] make sure they all go "yourModName:" rather than "MarkedMod". You can ctrl+R to replace in 1 file, or ctrl+shift+r to mass replace in specific files/directories (Be careful.).
-// Start with the DefaultCommon cards - they are the most commented cards since I don't feel it's necessary to put identical comments on every card.
-// After you sorta get the hang of how to make cards, check out the card template which will make your life easier
-
-/*
- * With that out of the way:
- * Welcome to this super over-commented Slay the Spire modding base.
- * Use it to make your own mod of any type. - If you want to add any standard in-game content (character,
- * cards, relics), this is a good starting point.
- * It features 1 character with a minimal set of things: 1 card of each type, 1 debuff, couple of relics, etc.
- * If you're new to modding, you basically *need* the BaseMod wiki for whatever you wish to add
- * https://github.com/daviscook477/BaseMod/wiki - work your way through with this base.
- * Feel free to use this in any way you like, of course. MIT licence applies. Happy modding!
- *
- * And pls. Read the comments.
- */
 
 @SpireInitializer
 public class MarkedMod
@@ -73,78 +40,36 @@ public class MarkedMod
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
-
         EditKeywordsSubscriber,
         PostInitializeSubscriber {
-    // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
-    // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(MarkedMod.class.getName());
     private static String modID;
 
+    //TODO:
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
-    public static boolean enablePlaceholder = true; // The boolean we'll be setting on/off (true/false)
+    public static boolean enablePlaceholder = true;
 
-    //This is for the in-game mod settings panel.
-    private static final String MODNAME = "Default Mod";
-    private static final String AUTHOR = "Gremious"; // And pretty soon - You!
-    private static final String DESCRIPTION = "A base for Slay the Spire to start your own mod from, feat. the Default.";
-    
-    // =============== INPUT TEXTURE LOCATION =================
-    
-    // Colors (RGB)
-    // Character Color
-    public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    private static final String MODNAME = "Marked Mod";
+    private static final String AUTHOR = "torrentails";
+    private static final String DESCRIPTION = "Adds cards, relics, a potion, and even a new stance to the Ascetic, all relating to the new \"Mark\" mechanic.";
+
+    private static Color cachedColor = null;
 
     public static final float[] STANCE_COLORS = {0.2125f, 0.4125f, 0.68125f, 0.88125f, 0.36875f, 0.56875f};
 
 
-    public static final Color PLACEHOLDER_POTION_LIQUID = getColor(255.0f, null, null); // Orange-ish Red
-    public static final Color PLACEHOLDER_POTION_HYBRID = getColor(null,255.0f, null); // Near White
-    public static final Color PLACEHOLDER_POTION_SPOTS = getColor(null, null, 255.0f); // Super Dark Red/Brown
-    // public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(51.0f, 51.0f, 51.0f); // Orange-ish Red
-    // public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(68.0f, 68.0f, 68.0f); // Near White
-    // public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(238.0f, 238.0f, 238.0f); // Super Dark Red/Brown
-    
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-    // ONCE YOU CHANGE YOUR MOD ID (BELOW, YOU CAN'T MISS IT) CHANGE THESE PATHS!!!!!!!!!!!
-  
-    // Card backgrounds - The actual rectangular card.
-    private static final String ATTACK_DEFAULT_GRAY = "MarkedModResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY = "MarkedModResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY = "MarkedModResources/images/512/bg_power_default_gray.png";
-    
-    private static final String ENERGY_ORB_DEFAULT_GRAY = "MarkedModResources/images/512/card_default_gray_orb.png";
-    private static final String CARD_ENERGY_ORB = "MarkedModResources/images/512/card_small_orb.png";
-    
-    private static final String ATTACK_DEFAULT_GRAY_PORTRAIT = "MarkedModResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_DEFAULT_GRAY_PORTRAIT = "MarkedModResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_DEFAULT_GRAY_PORTRAIT = "MarkedModResources/images/1024/bg_power_default_gray.png";
-    private static final String ENERGY_ORB_DEFAULT_GRAY_PORTRAIT = "MarkedModResources/images/1024/card_default_gray_orb.png";
-    
-    // Character assets
-    private static final String THE_DEFAULT_BUTTON = "MarkedModResources/images/charSelect/DefaultCharacterButton.png";
-    private static final String THE_DEFAULT_PORTRAIT = "MarkedModResources/images/charSelect/DefaultCharacterPortraitBG.png";
-    public static final String THE_DEFAULT_SHOULDER_1 = "MarkedModResources/images/char/defaultCharacter/shoulder.png";
-    public static final String THE_DEFAULT_SHOULDER_2 = "MarkedModResources/images/char/defaultCharacter/shoulder2.png";
-    public static final String THE_DEFAULT_CORPSE = "MarkedModResources/images/char/defaultCharacter/corpse.png";
-    
-    //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
+    public static final Color POTION_LIQUID = getColor(255.0f, null, null);
+    public static final Color POTION_HYBRID = getColor(null, 255.0f, null);
+    public static final Color POTION_SPOTS = getColor(null, null, 255.0f);
     public static final String BADGE_IMAGE = "MarkedModResources/images/Badge.png";
-    
-    // Atlas and JSON files for the Animations
-    public static final String THE_DEFAULT_SKELETON_ATLAS = "MarkedModResources/images/char/defaultCharacter/skeleton.atlas";
-    public static final String THE_DEFAULT_SKELETON_JSON = "MarkedModResources/images/char/defaultCharacter/skeleton.json";
-    
-    // =============== MAKE IMAGE PATHS =================
+
     
     public static String makeCardPath(String resourcePath) {
-        return getModID() + "Resources/images/cards/" + resourcePath;
+        // return getModID() + "Resources/images/cards/" + resourcePath;
+        // TODO: PICTURES!!!
+        return getModID() + "Resources/images/cards/beta_img.png";
     }
     
     public static String makeRelicPath(String resourcePath) {
@@ -155,53 +80,17 @@ public class MarkedMod
         return getModID() + "Resources/images/relics/outline/" + resourcePath;
     }
     
-    public static String makeOrbPath(String resourcePath) {
-        return getModID() + "Resources/orbs/" + resourcePath;
-    }
-    
     public static String makePowerPath(String resourcePath) {
         return getModID() + "Resources/images/powers/" + resourcePath;
     }
-    
-    public static String makeEventPath(String resourcePath) {
-        return getModID() + "Resources/images/events/" + resourcePath;
-    }
-    
-    // =============== /MAKE IMAGE PATHS/ =================
-    
-    // =============== /INPUT TEXTURE LOCATION/ =================
-    
-    
-    // =============== SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE =================
+
     
     public MarkedMod() {
         logger.info("Subscribe to BaseMod hooks");
         
         BaseMod.subscribe(this);
-        
-      /*
-           (   ( /(  (     ( /( (            (  `   ( /( )\ )    )\ ))\ )
-           )\  )\()) )\    )\()))\ )   (     )\))(  )\()|()/(   (()/(()/(
-         (((_)((_)((((_)( ((_)\(()/(   )\   ((_)()\((_)\ /(_))   /(_))(_))
-         )\___ _((_)\ _ )\ _((_)/(_))_((_)  (_()((_) ((_|_))_  _(_))(_))_
-        ((/ __| || (_)_\(_) \| |/ __| __| |  \/  |/ _ \|   \  |_ _||   (_)
-         | (__| __ |/ _ \ | .` | (_ | _|  | |\/| | (_) | |) |  | | | |) |
-          \___|_||_/_/ \_\|_|\_|\___|___| |_|  |_|\___/|___/  |___||___(_)
-      */
       
         setModID("MarkedMod");
-        // cool
-        // TODO: NOW READ THIS!!!!!!!!!!!!!!!:
-        
-        // 1. Go to your resources folder in the project panel, and refactor> rename theDefaultResources to
-        // yourModIDResources.
-        
-        // 2. Click on the localization > eng folder and press ctrl+shift+r, then select "Directory" (rather than in Project)
-        // replace all instances of MarkedMod with yourModID.
-        // Because your mod ID isn't the default. Your cards (and everything else) should have Your mod id. Not mine.
-        
-        // 3. FINALLY and most importantly: Scroll up a bit. You may have noticed the image locations above don't use getModID()
-        // Change their locations to reflect your actual ID rather than MarkedMod. They get loaded before getID is a thing.
         
         logger.info("Done subscribing");
         
@@ -221,70 +110,69 @@ public class MarkedMod
         logger.info("Done adding mod settings");
         
     }
+
+
+    public static void setModID(String ID) {
+        Gson coolG = new Gson();
+        InputStream in = MarkedMod.class.getResourceAsStream("/IDCheckStrings.json");
+
+        IDCheck EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheck.class);
+
+        logger.info("You are attempting to set your mod ID as: " + ID);
+
+        if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) {
+            throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION);
+        } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) {
+            modID = EXCEPTION_STRINGS.DEFAULTID;
+        } else {
+            modID = ID;
+        }
+
+        logger.info("Success! ID is " + modID);
+    }
+
+
+    public static String getModID() {
+        return modID;
+    }
+
     
-    // ====== NO EDIT AREA ======
-    // DON'T TOUCH THIS STUFF. IT IS HERE FOR STANDARDIZATION BETWEEN MODS AND TO ENSURE GOOD CODE PRACTICES.
-    // IF YOU MODIFY THIS I WILL HUNT YOU DOWN AND DOWNVOTE YOUR MOD ON WORKSHOP
-    
-    public static void setModID(String ID) { // DON'T EDIT
-        Gson coolG = new Gson(); // EY DON'T EDIT THIS
-        //   String IDjson = Gdx.files.internal("IDCheckStringsDONT-EDIT-AT-ALL.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i hate u Gdx.files
-        InputStream in = MarkedMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THIS ETHER
-        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // OR THIS, DON'T EDIT IT
-        logger.info("You are attempting to set your mod ID as: " + ID); // NO WHY
-        if (ID.equals(EXCEPTION_STRINGS.DEFAULTID)) { // DO *NOT* CHANGE THIS ESPECIALLY, TO EDIT YOUR MOD ID, SCROLL UP JUST A LITTLE, IT'S JUST ABOVE
-            throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION); // THIS ALSO DON'T EDIT
-        } else if (ID.equals(EXCEPTION_STRINGS.DEVID)) { // NO
-            modID = EXCEPTION_STRINGS.DEFAULTID; // DON'T
-        } else { // NO EDIT AREA
-            modID = ID; // DON'T WRITE OR CHANGE THINGS HERE NOT EVEN A LITTLE
-        } // NO
-        logger.info("Success! ID is " + modID); // WHY WOULD U WANT IT NOT TO LOG?? DON'T EDIT THIS.
-    } // NO
-    
-    public static String getModID() { // NO
-        return modID; // DOUBLE NO
-    } // NU-UH
-    
-    private static void pathCheck() { // ALSO NO
-        Gson coolG = new Gson(); // NNOPE DON'T EDIT THIS
-        //   String IDjson = Gdx.files.internal("IDCheckStringsDONT-EDIT-AT-ALL.json").readString(String.valueOf(StandardCharsets.UTF_8)); // i still hate u btw Gdx.files
-        InputStream in = MarkedMod.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json"); // DON'T EDIT THISSSSS
-        IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class); // NAH, NO EDIT
-        String packageName = MarkedMod.class.getPackage().getName(); // STILL NO EDIT ZONE
-        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources"); // PLEASE DON'T EDIT THINGS HERE, THANKS
-        if (!modID.equals(EXCEPTION_STRINGS.DEVID)) { // LEAVE THIS EDIT-LESS
-            if (!packageName.equals(getModID())) { // NOT HERE ETHER
-                throw new RuntimeException(EXCEPTION_STRINGS.PACKAGE_EXCEPTION + getModID()); // THIS IS A NO-NO
-            } // WHY WOULD U EDIT THIS
-            if (!resourcePathExists.exists()) { // DON'T CHANGE THIS
-                throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources"); // NOT THIS
-            }// NO
-        }// NO
-    }// NO
-    
-    // ====== YOU CAN EDIT AGAIN ======
+    private static void pathCheck() {
+        Gson coolG = new Gson();
+        InputStream in = MarkedMod.class.getResourceAsStream("/IDCheckStrings.json");
+
+        IDCheck EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheck.class);
+
+        String packageName = MarkedMod.class.getPackage().getName();
+        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources");
+
+        if (!modID.equals(EXCEPTION_STRINGS.DEVID)) {
+            if (!packageName.equals(getModID())) {
+                throw new RuntimeException(EXCEPTION_STRINGS.PACKAGE_EXCEPTION + getModID());
+            }
+
+            if (!resourcePathExists.exists()) {
+                throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources");
+            }
+        }
+    }
     
     
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= Initializing Default Mod. Hi. =========================");
+        logger.info("Initializing " + MODNAME);
         MarkedMod defaultmod = new MarkedMod();
-        logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
+        logger.info(MODNAME + " Initialized");
     }
-    
-    // ============== /SUBSCRIBE, CREATE THE COLOR_GRAY, INITIALIZE/ =================
-    
-    
-    // =============== POST-INITIALIZE =================
+
     
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        
-        // Load the Mod Badge
+
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-        
+
+        //TODO:
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
         
@@ -312,27 +200,17 @@ public class MarkedMod
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         logger.info("Done loading badge Image and mod options");
     }
-    
-    // =============== / POST-INITIALIZE/ =================
-    
-    
-    // ================ ADD POTIONS ===================
+
     
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
-        
-        // Class Specific Potion. If you want your potion to not be class-specific,
-        // just remove the player class at the end (in this case the "TheDefaultEnum.THE_DEFAULT".
-        // Remember, you can press ctrl+P inside parentheses like addPotions)
-        BaseMod.addPotion(BlackLotusJuice.class, PLACEHOLDER_POTION_LIQUID, PLACEHOLDER_POTION_HYBRID, PLACEHOLDER_POTION_SPOTS, BlackLotusJuice.POTION_ID, AbstractPlayer.PlayerClass.WATCHER);
+        BaseMod.addPotion(BlackLotusJuice.class,
+                          POTION_LIQUID,
+                          POTION_HYBRID, POTION_SPOTS, BlackLotusJuice.POTION_ID, AbstractPlayer.PlayerClass.WATCHER);
         
         logger.info("Done editing potions");
     }
-    
-    // ================ /ADD POTIONS/ ===================
-    
-    
-    // ================ ADD RELICS ===================
+
     
     @Override
     public void receiveEditRelics() {
@@ -347,25 +225,17 @@ public class MarkedMod
         // BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
         
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
-        UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+        // UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
         logger.info("Done adding relics!");
 
         receiveEditPotions();
     }
-    
-    // ================ /ADD RELICS/ ===================
-    
-    
-    // ================ ADD CARDS ===================
+
     
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
-        //Ignore this
         pathCheck();
-        // Add the Custom Dynamic Variables
-        logger.info("Add variabls");
-        // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultCustomVariable());
         
         logger.info("Adding cards");
@@ -378,11 +248,13 @@ public class MarkedMod
         BaseMod.addCard(new PinPointDefense());
         BaseMod.addCard(new GracefulMovements());
         BaseMod.addCard(new NorthStar());
+        BaseMod.addCard(new SlowDance());
 
         BaseMod.addCard(new Tag());
         
         logger.info("Making sure the cards are unlocked.");
 
+        // TODO: Unlock packages maybe?
         UnlockTracker.unlockCard(Acupuncture.ID);
         UnlockTracker.unlockCard(FirstStrike.ID);
         UnlockTracker.unlockCard(GentlePulse.ID);
@@ -390,64 +262,37 @@ public class MarkedMod
         UnlockTracker.unlockCard(PinPointDefense.ID);
         UnlockTracker.unlockCard(GracefulMovements.ID);
         UnlockTracker.unlockCard(NorthStar.ID);
+        UnlockTracker.unlockCard(SlowDance.ID);
 
         UnlockTracker.unlockCard(Tag.ID);
         
         logger.info("Done adding cards!");
     }
-    
-    // There are better ways to do this than listing every single individual card, but I do not want to complicate things
-    // in a "tutorial" mod. This will do and it's completely ok to use. If you ever want to clean up and
-    // shorten all the imports, go look take a look at other mods, such as Hubris.
-    
-    // ================ /ADD CARDS/ ===================
-    
-    
-    // ================ LOAD THE TEXT ===================
+
     
     @Override
     public void receiveEditStrings() {
         logger.info("You seeing this?");
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
-        
-        // CardStrings
+
         BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Card-Strings.json");
-        
-        // PowerStrings
+                getModID() + "Resources/localization/eng/Card-Strings.json");
+
         BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Power-Strings.json");
-        
-        // RelicStrings
+                getModID() + "Resources/localization/eng/Power-Strings.json");
+
         BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Relic-Strings.json");
+                getModID() + "Resources/localization/eng/Relic-Strings.json");
         
-        // Event Strings
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Event-Strings.json");
-        
-        // PotionStrings
         BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Potion-Strings.json");
-        
-        // CharacterStrings
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/DefaultMod-Character-Strings.json");
+                getModID() + "Resources/localization/eng/Potion-Strings.json");
 
-        // OrbStrings
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                                      getModID() + "Resources/localization/eng/DefaultMod-Orb-Strings.json");
-
-        // StanceStrings
         BaseMod.loadCustomStringsFile(StanceStrings.class,
                                       getModID() + "Resources/localization/eng/Stance-Strings.json");
         
         logger.info("Done editing strings");
     }
-    
-    // ================ /LOAD THE TEXT/ ===================
-    
-    // ================ LOAD THE KEYWORDS ===================
+
     
     @Override
     public void receiveEditKeywords() {
@@ -460,18 +305,40 @@ public class MarkedMod
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
         
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/DefaultMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
-                //  getModID().toLowerCase() makes your keyword mod specific (it won't show up in other cards that use that word)
             }
         }
     }
 
-    private static Color getColor(Float r, Float g, Float b) {
+
+    public static Color getColor(boolean useCached, final float a) {
+        Color color = getColor(useCached);
+        color.a = a;
+        return color;
+    }
+
+    public static Color getColor(boolean useCached) {
+        if (useCached) {
+            if (cachedColor == null) {
+                cachedColor = getColor(null, null, null);
+            }
+
+            return cachedColor;
+        } else {
+            return getColor(null, null, null);
+        }
+    }
+
+    public static Color getColor(Float r, Float g, Float b) {
+        return getColor(r,g,b,1.0f);
+    }
+
+    public static Color getColor(Float r, Float g, Float b, Float a) {
         if (r == null) {
             r = MathUtils.random(STANCE_COLORS[0], STANCE_COLORS[1]);
         }
@@ -484,13 +351,14 @@ public class MarkedMod
             b = MathUtils.random(STANCE_COLORS[4], STANCE_COLORS[5]);
         }
 
-        return new Color(r,g,b,1.0f);
+        Color color = CardHelper.getColor(r,g,b);
+
+        // color.a = 1.0f - a;
+
+        return color;
     }
-    
-    // ================ /LOAD THE KEYWORDS/ ===================    
-    
-    // this adds "ModName:" before the ID of any card/relic/power etc.
-    // in order to avoid conflicts if any other mod uses the same ID.
+
+
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
     }

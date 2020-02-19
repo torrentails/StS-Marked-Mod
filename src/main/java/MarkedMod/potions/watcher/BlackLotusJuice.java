@@ -1,21 +1,16 @@
 package MarkedMod.potions.watcher;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.potions.PlaceholderPotion;
 import MarkedMod.stances.DanceOfDeathStance;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.powers.LoseStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
@@ -31,8 +26,7 @@ public class BlackLotusJuice extends AbstractPotion
 
 
     public BlackLotusJuice() {
-        // super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionColor.FEAR);
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionColor.SMOKE);
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionEffect.NONE, MarkedMod.getColor(false), MarkedMod.getColor(false), MarkedMod.getColor(false));
 
         this.labOutlineColor = Settings.PURPLE_RELIC_COLOR;
         this.isThrown = false;
@@ -50,14 +44,14 @@ public class BlackLotusJuice extends AbstractPotion
 
     @Override
     public void use(AbstractCreature target) {
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {// 39
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             this.addToBot(new ChangeStanceAction(DanceOfDeathStance.STANCE_ID));
         }
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return new PlaceholderPotion();
+        return new BlackLotusJuice();
     }
 
     @Override

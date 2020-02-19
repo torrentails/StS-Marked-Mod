@@ -1,5 +1,6 @@
 package MarkedMod.patches.vfx.stance;
 
+import MarkedMod.MarkedMod;
 import MarkedMod.stances.DanceOfDeathStance;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -29,16 +30,11 @@ public class StanceAuraEffectPatch
                 Field colorField = AbstractGameEffect.class.getDeclaredField("color");
                 colorField.setAccessible(true);
 
-                float[] colors = DanceOfDeathStance.COLORS;
-                colorField.set(effect, new Color(
-                        MathUtils.random(colors[0], colors[1]),
-                        MathUtils.random(colors[2], colors[3]),
-                        MathUtils.random(colors[4], colors[5]),
-                        0.0F));
+                colorField.set(effect, MarkedMod.getColor(true));
 
             } catch (NoSuchFieldException | IllegalAccessException e)
             {
-                logger.warn("Can't access color field on AbstractGameEffect");
+                logger.error("Can't access color field on AbstractGameEffect");
                 // e.printStackTrace();
             }
         }

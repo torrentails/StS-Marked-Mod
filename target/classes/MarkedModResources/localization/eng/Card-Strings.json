@@ -1,0 +1,47 @@
+{
+  "MarkedMod:Acupuncture": {
+    "NAME": "Acupuncture",
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Tag to your hand."
+  },
+  "MarkedMod:FirstStrike": {
+    "NAME": "First Strike",
+    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark.",
+    "EXTENDED_DESCRIPTION": ["I've already Marked all enemies!"]
+  },
+  "MarkedMod:GentlePulse": {
+    "NAME": "Gentle Pulse",
+    "DESCRIPTION": "All enemies loose HP equal to their *Mark. NL *Exhaust",
+    "UPGRADE_DESCRIPTION": "*Retain NL All enemies loose HP equal to their *Mark. NL *Exhaust."
+  },
+  "MarkedMod:OneThousandNeedles": {
+    "NAME": "One Thousand Needles",
+    "DESCRIPTION": "Apply !M! *Mark. NL All enemies loose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand."
+  },
+  "MarkedMod:PinPointDefense": {
+    "NAME": "Pin Point Defense",
+    "DESCRIPTION": "Apply 3 *Mark whenever an enemy deals damage to you. NL Gain !M! *Block whenever you apply *Mark."
+  },
+  "MarkedMod:GracefulMovements": {
+    "NAME": "Graceful Movements",
+    "DESCRIPTION": "At the start of your turn, add !M! *Tag to your hand.",
+    "UPGRADE_DESCRIPTION": "*Innate. NL At the start of your turn, add !M! *Tag to your hand."
+  },
+  "MarkedMod:SlowDance": {
+    "NAME": "Slow Dance",
+    "DESCRIPTION": "*Unplayable, *Retain. NL When drawn, enter Dance of Death. NL You can not change *Stances while this is in your hand.",
+    "UPGRADE_DESCRIPTION": "*Unplayable. NL When drawn, enter Dance of Death. NL You can not change *Stances while this is in your hand."
+  },
+  "MarkedMod:NorthStar": {
+    "NAME": "North Star",
+    "DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
+  },
+  "MarkedMod:BlockChi": {
+    "NAME": "Block Chi",
+    "DESCRIPTION": "Remove all *Mark. If at least !M! *Mark was removed, the target is *Stunned."
+  },
+  "MarkedMod:Tag": {
+    "NAME": "Tag",
+    "DESCRIPTION": "Exhaust. NL Apply !M! *Mark."
+  }
+}

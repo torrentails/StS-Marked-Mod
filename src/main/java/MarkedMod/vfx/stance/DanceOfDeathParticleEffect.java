@@ -1,5 +1,6 @@
 package MarkedMod.vfx.stance;
 
+import MarkedMod.MarkedMod;
 import MarkedMod.stances.DanceOfDeathStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -9,6 +10,7 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
@@ -26,14 +28,10 @@ public DanceOfDeathParticleEffect() {
     this.duration = MathUtils.random(0.3F, 0.8F);
     this.scale = MathUtils.random(0.6F, 1.0F) * Settings.scale;
     this.dur_div2 = this.duration / 2.0F;
-    float[] colors = DanceOfDeathStance.COLORS;
-    this.color = new Color(
-            MathUtils.random(colors[0], colors[1]),
-            MathUtils.random(colors[2], colors[3]),
-            MathUtils.random(colors[4], colors[5]),
-            0.0F);
-    this.x = AbstractDungeon.player.hb.cX + MathUtils.random(-AbstractDungeon.player.hb.width / 2.0F - 30.0F * Settings.scale, AbstractDungeon.player.hb.width / 2.0F + 30.0F * Settings.scale);
-    this.y = AbstractDungeon.player.hb.cY + MathUtils.random(-AbstractDungeon.player.hb.height / 2.0F - -10.0F * Settings.scale, AbstractDungeon.player.hb.height / 2.0F - 10.0F * Settings.scale);
+    this.color = MarkedMod.getColor(true, 0.0F);
+    Hitbox hb = AbstractDungeon.player.hb;
+    this.x = hb.cX + MathUtils.random(-hb.width / 2.0F - 30.0F * Settings.scale, hb.width / 2.0F + 30.0F * Settings.scale);
+    this.y = hb.cY + MathUtils.random(-hb.height / 2.0F - -10.0F * Settings.scale, hb.height / 2.0F - 10.0F * Settings.scale);
     this.x -= (float)this.img.packedWidth / 2.0F;
     this.y -= (float)this.img.packedHeight / 2.0F;
     this.renderBehind = MathUtils.randomBoolean(0.2F + (this.scale - 0.5F));

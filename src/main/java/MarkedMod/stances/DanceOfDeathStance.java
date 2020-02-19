@@ -85,7 +85,7 @@ public class DanceOfDeathStance extends AbstractCustomStance
 
         CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
         sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_WRATH");
-        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.SLATE, true));
+        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(MarkedMod.getColor(true), true));
         AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.ID));
         AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(AbstractDungeon.player, AbstractDungeon.player));
     }

@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51e1f9e7-b796-4b42-914e-1170e48fbc6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Todo list.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/NorthStar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GracefulMovementsPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GracefulMovements.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/NorthStar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/GracefulMovementsPower.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENCE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/SlowDance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/actions/watcher/ChangeStanceActionPatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/Yin_yang.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Yin_yang_card.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/beta_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/beta_img_p.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/powers/Yin_yang_sep.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/powers/yang_32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/powers/yang_84.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/powers/yin_32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/powers/yin_84.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Todo list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Todo list.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/MarkedMod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/colorless/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/colorless/Tag.java" afterDir="false" />
@@ -16,24 +24,141 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/FirstStrike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GentlePulse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GentlePulse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GracefulMovements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/GracefulMovements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/NorthStar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/NorthStar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/OneThousandNeedles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/cards/purple/PinPointDefense.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/orbs/DefaultOrb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/DefaultInsertPatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/potions/PlaceholderPotion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/potions/watcher/BlackLotusJuice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/potions/watcher/BlackLotusJuice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/RarePower.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackedPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/ApplyMarkOnAttackedPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/stances/DanceOfDeathStance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/stances/DanceOfDeathStance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/util/IDCheckDontTouchPls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/util/IDCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/IDCheckStringsDONT-EDIT-AT-ALL.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/IDCheckStrings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/Badge.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/Badge.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Acupuncture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/Acupuncture_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/cards/beautifu -bouquet color by Studio 7042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/object1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/object2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/object3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.autosave.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/corpse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/main2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer1d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer2d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer4d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer5d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/layer6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/orb/vfx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/shoulder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/shoulder2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/skeleton.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/skeleton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/char/defaultCharacter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/charSelect/Button.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/charSelect/DefaultCharacterButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/charSelect/DefaultCharacterPortraitBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/charSelect/PortraitBG.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/events/Events.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/events/IdentityCrisisEvent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/events/IdentityCrisisEvent2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/images/orbs/default_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Character-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Event-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Keyword-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Orb-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Potion-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/DefaultMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Relic-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Stance-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/MarkedModResources/localization/eng/Stance-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/MarkedMod.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/MarkedMod.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IDCheckStringsDONT-EDIT-AT-ALL.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/MarkedMod.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/colorless/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/colorless/Tag.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/Acupuncture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/Acupuncture.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/FirstStrike.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GentlePulse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GentlePulse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GracefulMovements.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/GracefulMovements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/NorthStar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/NorthStar.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/OneThousandNeedles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/cards/purple/PinPointDefense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/orbs/DefaultOrb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/DefaultInsertPatch$Locator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/DefaultInsertPatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch$Locator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch$Locator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/patches/vfx/stance/StanceAuraEffectPatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/potions/PlaceholderPotion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/potions/watcher/BlackLotusJuice.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/potions/watcher/BlackLotusJuice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/RarePower.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/ApplyMarkOnAttackedPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/ApplyMarkOnAttackedPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/powers/watcher/GainBlockOnApplyMarkPower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/stances/DanceOfDeathStance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/stances/DanceOfDeathStance.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/util/IDCheckDontTouchPls.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathParticleEffect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedMod/vfx/stance/DanceOfDeathStanceChangeParticle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/Badge.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/images/Badge.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/cards/Acupuncture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/cards/Acupuncture_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/cards/beautifu -bouquet color by Studio 7042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/object1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/object2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/object3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.autosave.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/Spriter/theDefaultAnimation.scml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/corpse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/main2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer1d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer2d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer3d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer4d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer5d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/layer6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/orb/vfx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/shoulder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/shoulder2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/skeleton.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/skeleton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/char/defaultCharacter/skeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/charSelect/Button.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/charSelect/DefaultCharacterButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/charSelect/DefaultCharacterPortraitBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/charSelect/PortraitBG.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/events/Events.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/events/IdentityCrisisEvent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/events/IdentityCrisisEvent2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/images/orbs/default_orb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Card-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Character-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Event-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Keyword-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Orb-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Potion-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Power-Strings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/DefaultMod-Relic-Strings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/Stance-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MarkedModResources/localization/eng/Stance-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -46,8 +171,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Purple Card" />
+        <option value="Class" />
       </list>
     </option>
     <option name="SCHEME" value="Project" />
@@ -68,7 +193,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

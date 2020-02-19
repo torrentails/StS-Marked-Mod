@@ -1,5 +1,6 @@
 package MarkedMod.vfx.stance;
 
+import MarkedMod.MarkedMod;
 import MarkedMod.stances.DanceOfDeathStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -29,13 +30,7 @@ private TextureAtlas.AtlasRegion img;
 
 
     public DanceOfDeathStanceChangeParticle(float playerX, float[] colorRanges) {
-        this(playerX, new Color(MathUtils.random(colorRanges[0],
-                                                 colorRanges[1]),
-                                MathUtils.random(colorRanges[2],
-                                                 colorRanges[3]),
-                                MathUtils.random(colorRanges[4],
-                                                 colorRanges[5]),
-                                0.0f));
+        this(playerX, MarkedMod.getColor(true, 0.0f));
     }
 
 
@@ -44,8 +39,7 @@ private TextureAtlas.AtlasRegion img;
         if (color == null)
         {
             logger.warn("No color was passed to DanceOfDeathStanceChangeParticle.");
-            float colorVal = MathUtils.random(0.1F, 0.3F);
-            this.color = new Color(colorVal, colorVal, colorVal, 0.0F);
+            this.color = MarkedMod.getColor(true, 0.0F);
         } else {
             this.color = color;
         }

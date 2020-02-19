@@ -20,10 +20,7 @@ public class Tag
 
     public static final String ID = MarkedMod.makeID(Tag.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Attack.png");
-    // TODO: Why it no load!?
-    //       I'm lazy, I know, but art isn't the highest priority in this stage of development.
-    //public static final String IMG = makeCardPath(Tag.class.getSimpleName() + ".png");
+    public static final String IMG = makeCardPath(Tag.class.getSimpleName() + ".png");
 
 
     public static final String NAME = cardStrings.NAME;

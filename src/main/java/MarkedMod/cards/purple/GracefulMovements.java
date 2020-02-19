@@ -3,13 +3,11 @@ package MarkedMod.cards.purple;
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
 import MarkedMod.powers.watcher.GracefulMovementsPower;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import static MarkedMod.MarkedMod.makeCardPath;
 
@@ -20,9 +18,7 @@ public class GracefulMovements
 
     public static final String ID = MarkedMod.makeID(GracefulMovements.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Attack.png");
-    // TODO: Why it no load!?
-    //public static final String IMG = makeCardPath(GracefulMovements.class.getSimpleName() + ".png");
+    public static final String IMG = makeCardPath(GracefulMovements.class.getSimpleName() + ".png");
 
 
     public static final String NAME = cardStrings.NAME;

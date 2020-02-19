@@ -12,9 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import static MarkedMod.MarkedMod.makeCardPath;
 
 
@@ -23,10 +20,7 @@ public class NorthStar
 {
 
     public static final String ID = MarkedMod.makeID(NorthStar.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath("Attack.png");
-    // TODO: Why it no load!?
-    // public static final String IMG = makeCardPath(NorthStar.class.getSimpleName() + ".png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);public static final String IMG = makeCardPath(NorthStar.class.getSimpleName() + ".png");
 
 
     public static final String NAME = cardStrings.NAME;
@@ -45,8 +39,8 @@ public class NorthStar
     public NorthStar()
     {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = MAGIC;
-        this.exhaust = true;
+        baseMagicNumber = magicNumber = MAGIC;
+        exhaust = true;
     }
 
 
@@ -65,23 +59,25 @@ public class NorthStar
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        if (this.energyOnUse < EnergyPanel.totalCount) {
-            this.energyOnUse = EnergyPanel.totalCount;
+        if (energyOnUse < EnergyPanel.totalCount) {
+            energyOnUse = EnergyPanel.totalCount;
         }
-        Iterator<AbstractMonster> iter;
-        for (int i = 0; i < this.energyOnUse; i++) {
-            iter = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
-            while (iter.hasNext()) {
-                monster = iter.next();
-                if (monster != null && !monster.isDeadOrEscaped()) {
-                    this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
-                    applyMark(player, monster, MARK);
+
+        MarkedMod.logger.info(energyOnUse);
+        for (int i = 0; i < energyOnUse; i++)
+        {
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters)
+            {
+                if (m != null && !m.isDeadOrEscaped())
+                {
+                    addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
+                    applyMark(player, m, MARK);
                 }
             }
 
             triggerMarks();
         }
 
-        this.addToBot(new PressEndTurnButtonAction());
+        addToBot(new PressEndTurnButtonAction());
     }
 }

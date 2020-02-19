@@ -52,7 +52,7 @@ Graceful Movements
 	1:Innate
 	  Add [1:0.5 (rounded down)] Tag[s] to your hand at the start of each turn.
 
-Dance of Death
+Slow Dance
 	skill
 	rare
 	-

@@ -24,8 +24,8 @@ private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getP
 public static final String NAME = powerStrings.NAME;
 public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("placeholder_power84.png"));
-private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("placeholder_power32.png"));
+private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("yin_84.png"));
+private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("yin_32.png"));
 
 public GainBlockOnApplyMarkPower(AbstractCreature owner, int newAmount) {
     this.name = NAME;
