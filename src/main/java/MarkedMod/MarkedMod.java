@@ -12,16 +12,13 @@ import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -55,14 +52,6 @@ public class MarkedMod
     private static final String AUTHOR = "torrentails";
     private static final String DESCRIPTION = "Adds cards, relics, a potion, and even a new stance to the Ascetic, all relating to the new \"Mark\" mechanic.";
 
-    private static Color cachedColor = null;
-
-    public static final float[] STANCE_COLORS = {0.2125f, 0.4125f, 0.68125f, 0.88125f, 0.36875f, 0.56875f};
-
-
-    public static final Color POTION_LIQUID = getColor(255.0f, null, null);
-    public static final Color POTION_HYBRID = getColor(null, 255.0f, null);
-    public static final Color POTION_SPOTS = getColor(null, null, 255.0f);
     public static final String BADGE_IMAGE = "MarkedModResources/images/Badge.png";
 
     
@@ -93,8 +82,7 @@ public class MarkedMod
         setModID("MarkedMod");
         
         logger.info("Done subscribing");
-        
-        
+
         logger.info("Adding mod settings");
         // This loads the mod settings.
         // The actual mod Button is added below in receivePostInitialize()
@@ -205,8 +193,11 @@ public class MarkedMod
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
         BaseMod.addPotion(BlackLotusJuice.class,
-                          POTION_LIQUID,
-                          POTION_HYBRID, POTION_SPOTS, BlackLotusJuice.POTION_ID, AbstractPlayer.PlayerClass.WATCHER);
+                          BlackLotusJuice.COLOR_GAS,
+                          BlackLotusJuice.COLOR_LIQUID,
+                          BlackLotusJuice.COLOR_SPOTS,
+                          BlackLotusJuice.POTION_ID,
+                          AbstractPlayer.PlayerClass.WATCHER);
         
         logger.info("Done editing potions");
     }
@@ -316,50 +307,24 @@ public class MarkedMod
     }
 
 
-    public static Color getColor(boolean useCached, final float a) {
-        Color color = getColor(useCached);
-        color.a = a;
-        return color;
-    }
-
-    public static Color getColor(boolean useCached) {
-        if (useCached) {
-            if (cachedColor == null) {
-                cachedColor = getColor(null, null, null);
-            }
-
-            return cachedColor;
-        } else {
-            return getColor(null, null, null);
-        }
-    }
-
-    public static Color getColor(Float r, Float g, Float b) {
-        return getColor(r,g,b,1.0f);
-    }
-
-    public static Color getColor(Float r, Float g, Float b, Float a) {
-        if (r == null) {
-            r = MathUtils.random(STANCE_COLORS[0], STANCE_COLORS[1]);
-        }
-
-        if (g == null) {
-            g = MathUtils.random(STANCE_COLORS[2], STANCE_COLORS[3]);
-        }
-
-        if (b == null) {
-            b = MathUtils.random(STANCE_COLORS[4], STANCE_COLORS[5]);
-        }
-
-        Color color = CardHelper.getColor(r,g,b);
-
-        // color.a = 1.0f - a;
-
-        return color;
-    }
-
-
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
+    }
+
+
+    // Can be quickly inserted anywhere to get a stack trace
+    // Probably an easier/better way to do this but I don't care enough rn
+    public static void getStacktrace(boolean doTheThing) {
+        if (doTheThing) {
+            try
+            {
+                if (!makeID("foo").equals("bar"))
+                {
+                    throw new Exception();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

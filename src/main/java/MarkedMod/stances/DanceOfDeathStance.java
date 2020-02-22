@@ -14,14 +14,13 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.stances.NeutralStance;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceAuraEffect;
 import com.megacrit.cardcrawl.vfx.stance.StanceChangeParticleGenerator;
-
-import java.util.ArrayList;
 
 
 public class DanceOfDeathStance extends AbstractCustomStance
@@ -30,9 +29,20 @@ public class DanceOfDeathStance extends AbstractCustomStance
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     public static final String NAME = stanceString.NAME;
     public static final String[] DESCRIPTIONS = stanceString.DESCRIPTION;
+    public static final float[] COLORS =
+            {54.4f,     // red min
+             105.6f,    // red max
+             174.4f,    // green min
+             225.6f,    // green max
+             94.4f,     // blue min
+             145.6f};   // blue max
+
+    private static Color cachedColor = null;
+
+    private static final String ENTER_SOUND = "STANCE_ENTER_CALM";
+    private static final String LOOP_SOUND = "STANCE_LOOP_DIVINITY";
+
     private static final int MARK = 2;
-    // TODO: Refactor this to be direct to MarkedMod
-    public static float[] COLORS = MarkedMod.STANCE_COLORS;
     private static float TIMER = 0.1F;
     private static long sfxId = -1L;
 
@@ -83,9 +93,9 @@ public class DanceOfDeathStance extends AbstractCustomStance
             this.stopIdleSfx();
         }
 
-        CardCrawlGame.sound.play("STANCE_ENTER_WRATH");
-        sfxId = CardCrawlGame.sound.playAndLoop("STANCE_LOOP_WRATH");
-        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(MarkedMod.getColor(true), true));
+        CardCrawlGame.sound.play(ENTER_SOUND);
+        sfxId = CardCrawlGame.sound.playAndLoop(LOOP_SOUND);
+        AbstractDungeon.effectsQueue.add(new BorderFlashEffect(getColor(1.0f), true));
         AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.ID));
         AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(AbstractDungeon.player, AbstractDungeon.player));
     }
@@ -121,5 +131,23 @@ public class DanceOfDeathStance extends AbstractCustomStance
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, info.owner, new MarkPower(target, MARK), MARK));
 
+    }
+
+    public static Color getColor(float a) {
+        if (cachedColor == null)
+        {
+            float r = MathUtils.random(COLORS[0], COLORS[1]);
+            float g = MathUtils.random(COLORS[2], COLORS[3]);
+            float b = MathUtils.random(COLORS[4], COLORS[5]);
+
+            cachedColor = CardHelper.getColor(r,g,b);
+        }
+
+        Color color = new Color(cachedColor);
+
+        if (a > 1.0f) { a = a / 255.0f; }
+        color.a = a;
+
+        return color;
     }
 }

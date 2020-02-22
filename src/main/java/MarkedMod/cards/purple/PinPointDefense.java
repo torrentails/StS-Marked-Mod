@@ -44,7 +44,7 @@ public PinPointDefense() {
 public void upgrade() {
     if (!upgraded) {
         upgradeName();
-        upgradeBlock(UPGRADE_PLUS_MAGIC);
+        this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
         initializeDescription();
     }
 }

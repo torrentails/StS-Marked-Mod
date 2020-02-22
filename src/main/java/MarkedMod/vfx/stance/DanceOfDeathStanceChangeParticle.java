@@ -18,19 +18,16 @@ import static MarkedMod.MarkedMod.logger;
 // TODO: Change particle effect to rantomly rotated needles.
 public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
 {
-private TextureAtlas.AtlasRegion img;
+    private static final float DURATION = 1.0f;
 
+    private TextureAtlas.AtlasRegion img;
     private float x;
     private float y;
     private float delayTimer;
 
+
     public DanceOfDeathStanceChangeParticle(float playerX) {
-        this(playerX, DanceOfDeathStance.COLORS);
-    }
-
-
-    public DanceOfDeathStanceChangeParticle(float playerX, float[] colorRanges) {
-        this(playerX, MarkedMod.getColor(true, 0.0f));
+        this(playerX, null);
     }
 
 
@@ -38,22 +35,21 @@ private TextureAtlas.AtlasRegion img;
     public DanceOfDeathStanceChangeParticle(float playerX, Color color) {
         if (color == null)
         {
-            logger.warn("No color was passed to DanceOfDeathStanceChangeParticle.");
-            this.color = MarkedMod.getColor(true, 0.0F);
+            this.color = DanceOfDeathStance.getColor(0.0F);
         } else {
             this.color = color;
         }
 
         this.img = ImageMaster.STRIKE_LINE;
-        this.startingDuration = 1.0F;
+        this.startingDuration = DURATION;
         this.duration = this.startingDuration;
 
-        this.x = MathUtils.random(-30.0F, 30.0F) * Settings.scale - (float)this.img.packedWidth / 2.0F;
+        this.x = MathUtils.random(-100.0F, 100.0F) * Settings.scale - (float)this.img.packedWidth / 2.0F;
         this.y = (float)Settings.HEIGHT / 2.0F + MathUtils.random(-150.0F, 150.0F) * Settings.scale - (float)this.img.packedHeight / 2.0F;
 
         this.scale = MathUtils.random(2.2F, 2.5F) * Settings.scale;
         this.delayTimer = MathUtils.random(0.5F);
-        this.rotation = MathUtils.random(89.0F, 91.0F);
+        this.rotation = MathUtils.random(70.0F, 110.0F);
         this.renderBehind = MathUtils.randomBoolean(0.9F);
     }
 

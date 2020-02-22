@@ -2,11 +2,13 @@ package MarkedMod.potions.watcher;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.stances.DanceOfDeathStance;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -25,8 +27,20 @@ public class BlackLotusJuice extends AbstractPotion
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
 
+    public static final Color COLOR_GAS = CardHelper.getColor(
+            DanceOfDeathStance.COLORS[1],
+            DanceOfDeathStance.COLORS[3],
+            DanceOfDeathStance.COLORS[5]);
+    public static final Color COLOR_LIQUID = CardHelper.getColor(
+            DanceOfDeathStance.COLORS[0],
+            DanceOfDeathStance.COLORS[2],
+            DanceOfDeathStance.COLORS[4]);
+    public static final Color COLOR_SPOTS = null;
+
+
     public BlackLotusJuice() {
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.M, PotionEffect.NONE, MarkedMod.getColor(false), MarkedMod.getColor(false), MarkedMod.getColor(false));
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.EYE, PotionEffect.NONE,
+              COLOR_GAS, COLOR_LIQUID, COLOR_SPOTS);
 
         this.labOutlineColor = Settings.PURPLE_RELIC_COLOR;
         this.isThrown = false;
@@ -36,7 +50,7 @@ public class BlackLotusJuice extends AbstractPotion
 
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
-        // TODO: as custom Keyword
+        // TODO: as custom Keyword maybe?
         this.tips.add(new PowerTip(TipHelper.capitalize(DanceOfDeathStance.NAME), DanceOfDeathStance.DESCRIPTIONS[0]));
 
     }

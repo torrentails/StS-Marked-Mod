@@ -28,7 +28,8 @@ public DanceOfDeathParticleEffect() {
     this.duration = MathUtils.random(0.3F, 0.8F);
     this.scale = MathUtils.random(0.6F, 1.0F) * Settings.scale;
     this.dur_div2 = this.duration / 2.0F;
-    this.color = MarkedMod.getColor(true, 0.0F);
+    this.color = DanceOfDeathStance.getColor(0.0F);
+
     Hitbox hb = AbstractDungeon.player.hb;
     this.x = hb.cX + MathUtils.random(-hb.width / 2.0F - 30.0F * Settings.scale, hb.width / 2.0F + 30.0F * Settings.scale);
     this.y = hb.cY + MathUtils.random(-hb.height / 2.0F - -10.0F * Settings.scale, hb.height / 2.0F - 10.0F * Settings.scale);
@@ -56,8 +57,7 @@ public void update() {
 public void render(SpriteBatch sb) {
     sb.setColor(this.color);
     sb.setBlendFunction(770, 1);
-    sb.draw(this.img, this.x, this.y + this.vY, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 0.8F, (0.1F + (this.dur_div2 * 2.0F - this.duration) * 2.0F * this.scale) * Settings.scale, this.rotation);// 58
-    sb.setBlendFunction(770, 771);
+    sb.draw(this.img, this.x, this.y + this.vY, (float)this.img.packedWidth / 2.0F, (float)this.img.packedHeight / 2.0F, (float)this.img.packedWidth, (float)this.img.packedHeight, this.scale * 0.8F, (0.1F + (this.dur_div2 * 2.0F - this.duration) * 2.0F * this.scale) * Settings.scale, this.rotation);/* 58*/sb.setBlendFunction(770, 771);
 }
 
 public void dispose() {

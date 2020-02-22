@@ -20,17 +20,16 @@ import static MarkedMod.MarkedMod.logger;
 public class StanceAuraEffectPatch
 {
     @SpireInsertPatch(locator = Locator.class)
-    public static void AlowOtherStances(StanceAuraEffect effect, String stanceId)
+    public static void AllowOtherStances(StanceAuraEffect effect, String stanceId)
     {
         if (stanceId.equals(DanceOfDeathStance.STANCE_ID))
         {
-
             try
             {
                 Field colorField = AbstractGameEffect.class.getDeclaredField("color");
                 colorField.setAccessible(true);
 
-                colorField.set(effect, MarkedMod.getColor(true));
+                colorField.set(effect, DanceOfDeathStance.getColor(0.0f));
 
             } catch (NoSuchFieldException | IllegalAccessException e)
             {
