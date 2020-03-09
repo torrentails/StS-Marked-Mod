@@ -1,5 +1,6 @@
 package MarkedMod.util;
 
+
 public class IDCheck
 {
     public String DEFAULTID;

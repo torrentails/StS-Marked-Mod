@@ -1,6 +1,5 @@
 package MarkedMod.vfx.stance;
 
-import MarkedMod.MarkedMod;
 import MarkedMod.stances.DanceOfDeathStance;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -13,10 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import static MarkedMod.MarkedMod.logger;
 
-// TODO: Make this more unique, maybe rantomly rotated needles?
-// TODO: Base this more off of Calm instead of Wrath
 public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
 {
     private static final float DURATION = 1.0f;
@@ -54,6 +50,7 @@ public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
         this.renderBehind = MathUtils.randomBoolean(0.9F);
     }
 
+
     @Override
     public void update() {
         if (this.delayTimer > 0.0F) {
@@ -73,6 +70,7 @@ public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
         }
     }
 
+
     @Override
     public void render(SpriteBatch sb) {
         if (this.delayTimer <= 0.0F) {
@@ -82,6 +80,7 @@ public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
             sb.setBlendFunction(770, 771);
         }
     }
+
 
     @Override
     public void dispose() {

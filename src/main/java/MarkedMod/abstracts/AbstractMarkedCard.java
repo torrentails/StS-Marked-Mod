@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 
+@SuppressWarnings("unused")
 public abstract class AbstractMarkedCard
         extends CustomCard {
 
@@ -49,7 +50,6 @@ public AbstractMarkedCard(final String id,
 
     super(id, name, img, cost, rawDescription, type, color, rarity, target);
 
-    // Set all the things to their default values.
     isCostModified = false;
     isCostModifiedForTurn = false;
     isDamageModified = false;

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -16,18 +15,15 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
-public class BlackLotusJuice extends AbstractPotion
-{
-
-
+public class BlackLotusJuice extends AbstractPotion {
     public static final String POTION_ID = MarkedMod.makeID(BlackLotusJuice.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-
-    public static final Color COLOR_GAS = DanceOfDeathStance.COLOR_MAX.cpy();
+    // public static final Color COLOR_GAS = DanceOfDeathStance.COLOR_MAX.cpy();
+    public static final Color COLOR_GAS = Color.PINK.cpy();
     public static final Color COLOR_LIQUID = DanceOfDeathStance.COLOR_MIN.cpy().mul(0.5f, 0.5f, 0.5f, 1.0f);
     public static final Color COLOR_SPOTS = null;
 
@@ -57,10 +53,12 @@ public class BlackLotusJuice extends AbstractPotion
         }
     }
 
+
     @Override
     public AbstractPotion makeCopy() {
         return new BlackLotusJuice();
     }
+
 
     @Override
     public int getPotency(final int potency) {

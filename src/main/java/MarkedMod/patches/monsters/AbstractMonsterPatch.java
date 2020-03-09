@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
 
 
+@SuppressWarnings("unused")
 public class AbstractMonsterPatch
 {
-    @SpirePatch(clz = AbstractMonster.class,
-                method = "damage")
-    public static class Patch_damaage {
+    @SpirePatch(clz = AbstractMonster.class, method = "damage")
+    public static class damage {
 
         @SpireInsertPatch(locator = Locator_onAttackToChangeDamage.class,
                           localvars = {"damageAmount"})

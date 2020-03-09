@@ -16,10 +16,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import static MarkedMod.MarkedMod.makePowerPath;
 
 
-public class GracefulMovementsPower
-        extends AbstractPower
-        implements CloneablePowerInterface
-{
+public class GracefulMovementsPower extends AbstractPower
+        implements CloneablePowerInterface {
     public static final String POWER_ID = MarkedMod.makeID(GracefulMovementsPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -68,10 +66,7 @@ public class GracefulMovementsPower
 
 
     @Override
-    public AbstractPower makeCopy()
-    {
+    public AbstractPower makeCopy() {
         return new GracefulMovementsPower(this.owner, this.amount);
     }
-
-
 }

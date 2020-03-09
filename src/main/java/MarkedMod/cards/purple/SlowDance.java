@@ -37,7 +37,6 @@ public class SlowDance
     public SlowDance()
     {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        // this.selfRetain = true;
         this.exhaust = true;
     }
 
@@ -67,7 +66,6 @@ public class SlowDance
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            // this.selfRetain = false;
             this.exhaust = false;
         }
     }

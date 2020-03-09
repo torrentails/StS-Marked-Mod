@@ -42,7 +42,6 @@ public class MarkedMod
     public static final Logger logger = LogManager.getLogger(MarkedMod.class.getName());
     private static String modID;
 
-    //TODO:
     // Mod-settings settings. This is if you want an on/off savable button
     public static Properties theDefaultDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";

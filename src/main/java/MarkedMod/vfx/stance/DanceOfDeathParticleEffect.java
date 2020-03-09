@@ -1,6 +1,5 @@
 package MarkedMod.vfx.stance;
 
-import MarkedMod.MarkedMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -43,7 +42,6 @@ public class DanceOfDeathParticleEffect
     private AtlasRegion img;
 
 
-    // TODO: Cleanup after testing
     public DanceOfDeathParticleEffect() {
         this.img = PETALS[0];
 
@@ -78,6 +76,7 @@ public class DanceOfDeathParticleEffect
     }
 
 
+    @Override
     public void update() {
 
         if (this.duration < this.fadeDuration) {
@@ -98,6 +97,7 @@ public class DanceOfDeathParticleEffect
     }
 
 
+    @Override
     public void render(SpriteBatch sb) {
         while (this.lastDuration >= this.duration) {
             this.lastDuration -= animationSpeed;
@@ -117,26 +117,14 @@ public class DanceOfDeathParticleEffect
                 (float) this.img.packedWidth,
                 (float) this.img.packedHeight,
                 this.scale,
-                this.scale * 2.0f,
+                this.scale,
                 this.rotation);
 
         sb.setBlendFunction(770, 771);
     }
 
 
+    @Override
     public void dispose() {
     }
-
-
-    // private static class CustomPow2Out extends Interpolation {
-    //     private final float power;
-    //
-    //     public CustomPow2Out(final float power) {
-    //         this.power = power;
-    //     }
-    //
-    //     public float apply(float a) {
-    //         return (float)Math.pow(a - 1.0F, this.power) * (this.power % 2 == 0 ? -1.0f : 1.0f) + 1.0F;
-    //     }
-    // }
 }

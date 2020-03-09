@@ -6,7 +6,6 @@ import MarkedMod.actions.TriggerMarkAction;
 import MarkedMod.vfx.stance.DanceOfDeathParticleEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
@@ -57,8 +56,6 @@ public class DanceOfDeathStance
             this.particleTimer -= Gdx.graphics.getDeltaTime();
             if (this.particleTimer < 0.0F) {
                 this.particleTimer = TIMER;
-                // TODO: cleanup
-                // if (DanceOfDeathParticleEffect.particleCount > 1) { return; }
                 AbstractDungeon.effectsQueue.add(new DanceOfDeathParticleEffect());
             }
         }
@@ -92,19 +89,10 @@ public class DanceOfDeathStance
 
         CardCrawlGame.sound.play(ENTER_SOUND);
         sfxId = CardCrawlGame.sound.playAndLoop(LOOP_SOUND);
+        // TODO: Add a sakura tree
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(getColor(), true));
         AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.ID));
-        AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(AbstractDungeon.player,
-                                                                           AbstractDungeon.player));
-    }
-
-
-    @Override
-    public void stopIdleSfx() {
-        if (sfxId != -1L) {
-            CardCrawlGame.sound.stop("STANCE_LOOP_WRATH", sfxId);
-            sfxId = -1L;
-        }
+        AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(AbstractDungeon.player, AbstractDungeon.player));
     }
 
 
@@ -117,9 +105,16 @@ public class DanceOfDeathStance
     }
 
 
-    public static Color getColor() {
-        return getColor(1.0f);
+    @Override
+    public void stopIdleSfx() {
+        if (sfxId != -1L) {
+            CardCrawlGame.sound.stop(LOOP_SOUND, sfxId);
+            sfxId = -1L;
+        }
     }
+
+
+    public static Color getColor() { return getColor(1.0f); }
 
 
     public static Color getColor(float a) {

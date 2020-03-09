@@ -5,9 +5,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-import java.util.ArrayList;
 
-
+@SuppressWarnings("unused")
 public abstract class AbstractCustomStance extends AbstractStance
 {
     public int onAttackToChangeDamage(DamageInfo info, int damageAmount, AbstractCreature target) {
@@ -32,13 +31,17 @@ public abstract class AbstractCustomStance extends AbstractStance
 
     public void onAttack(DamageInfo info, int damageAmount) { }
 
-    // TODO: onAttacked and other hooks maybe?
+    //TODO: onAttacked and other hooks maybe?
+    // Not needed for this mod but could be useful for other modders
 
     public void wasHPLost(DamageInfo info, int damageAmount, AbstractCreature target) {
         this.wasHPLost(info, damageAmount);
     }
 
     public void wasHPLost(DamageInfo info, int damageAmount) { }
+
+    @Override
+    public void onExitStance() { this.stopIdleSfx(); }
 
     public static Color getColor(float a) { return new Color(0.33f, 0.33f, 0.33f, a); }
 }

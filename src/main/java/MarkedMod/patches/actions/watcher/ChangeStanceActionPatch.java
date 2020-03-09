@@ -14,6 +14,7 @@ import java.lang.reflect.Field;
 import static MarkedMod.MarkedMod.logger;
 
 @SuppressWarnings("unused")
+@Deprecated
 public class ChangeStanceActionPatch
 {
 
@@ -22,7 +23,7 @@ public class ChangeStanceActionPatch
     @SpirePatch(clz = ChangeStanceAction.class, method = "update")
     public static class PatchUpdate
     {
-        public static SpireReturn Prefix(ChangeStanceAction inst)
+        public static SpireReturn<?> Prefix(ChangeStanceAction inst)
         {
             try
             {
@@ -41,9 +42,9 @@ public class ChangeStanceActionPatch
                 }
 
                 if (unableToChangeStances && !(id.equals(DanceOfDeathStance.STANCE_ID) || id.equals(NeutralStance.STANCE_ID))) {
-                    // inst.isDone = true;
-                    //
-                    // return SpireReturn.Return(null);
+                    inst.isDone = true;
+
+                    return SpireReturn.Return(null);
                 }
             }
 
