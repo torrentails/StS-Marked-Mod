@@ -36,9 +36,10 @@
     "DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
   },
-  "MarkedMod:BlockChi": {
-    "NAME": "Block Chi",
-    "DESCRIPTION": "Remove all *Mark. If at least !M! *Mark was removed, the target is *Stunned."
+  "MarkedMod:ChiBlocker": {
+    "NAME": "Chi Blocker",
+    "DESCRIPTION": "Remove all *Mark. If at least !M! *Mark was removed, the target is *Stunned.",
+    "EXTENDED_DESCRIPTION": ["They haven't been marked yet!"]
   },
   "MarkedMod:Tag": {
     "NAME": "Tag",

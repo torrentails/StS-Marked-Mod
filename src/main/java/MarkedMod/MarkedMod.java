@@ -239,6 +239,7 @@ public class MarkedMod
         BaseMod.addCard(new GracefulMovements());
         BaseMod.addCard(new NorthStar());
         BaseMod.addCard(new SlowDance());
+        BaseMod.addCard(new ChiBlocker());
 
         BaseMod.addCard(new Tag());
         
@@ -253,6 +254,7 @@ public class MarkedMod
         UnlockTracker.unlockCard(GracefulMovements.ID);
         UnlockTracker.unlockCard(NorthStar.ID);
         UnlockTracker.unlockCard(SlowDance.ID);
+        UnlockTracker.unlockCard(ChiBlocker.ID);
 
         UnlockTracker.unlockCard(Tag.ID);
         
