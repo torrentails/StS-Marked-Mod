@@ -56,13 +56,12 @@ Slow Dance
 	skill
 	rare
 	-
-	0:Unplayable.
-	  Retain.
+	0:Unplayable, Retain.
 	  When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand.
 	1:Unplayable.
-	  Retain.
 	  When drawn, enter Dance of Death. You can not enter any other Stance while this is in your hand.
-	  If this card is in your hand at the start of your turn, it gains Etherial.
+	------- rework
+	0:Unplayable. NL 
 
 North Star
 	skill

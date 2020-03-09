@@ -2,6 +2,7 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import MarkedMod.cards.colorless.Tag;
 import MarkedMod.powers.watcher.GracefulMovementsPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -40,6 +41,7 @@ public class GracefulMovements
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.next_upgrade_magic = false;
+        this.cardsToPreview = new Tag();
     }
 
 

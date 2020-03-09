@@ -63,7 +63,7 @@ public class Tag
         {
             this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
         }
-        // I'm a dumbass, forgot to actually make Tag do anything :p
+
         applyMark(player, monster, this.magicNumber);
     }
 }

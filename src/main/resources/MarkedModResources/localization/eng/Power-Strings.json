@@ -9,14 +9,14 @@
 },
 "MarkedMod:ApplyMarkOnAttackedPower": {
         "NAME": "Pin Point Defense",
-        "DESCRIPTIONS": ["Gian #b", " Block whenever you apply Mark."]
+        "DESCRIPTIONS": ["Gian #b", " #yBlock whenever you apply Mark."]
 },
 "MarkedMod:GainBlockOnApplyMarkPower": {
         "NAME": "Pin Point Counter",
-        "DESCRIPTIONS": ["Apply #b", " Mark whenever an enemy deals attack damage to you."]
+        "DESCRIPTIONS": ["Apply #b", " #yMark whenever an enemy deals attack damage to you."]
 },
 "MarkedMod:GracefulMovementsPower": {
         "NAME": "Graceful Movements",
-        "DESCRIPTIONS": ["At the start of your turn, add #b", " Tag to your hand.", " Tags to your hand."]
+        "DESCRIPTIONS": ["At the start of your turn, add #b", " #yTag to your hand.", " #yTags to your hand."]
 }
 }

@@ -28,8 +28,8 @@
   },
   "MarkedMod:SlowDance": {
     "NAME": "Slow Dance",
-    "DESCRIPTION": "*Unplayable, *Retain. NL When drawn, enter Dance of Death. NL You can not change *Stances while this is in your hand.",
-    "UPGRADE_DESCRIPTION": "*Unplayable. NL When drawn, enter Dance of Death. NL You can not change *Stances while this is in your hand."
+    "DESCRIPTION": "Unplayable. NL When drawn, enter Dance of Death and Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, enter Dance of Death."
   },
   "MarkedMod:NorthStar": {
     "NAME": "North Star",

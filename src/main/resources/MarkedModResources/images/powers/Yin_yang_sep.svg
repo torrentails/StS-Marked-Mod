@@ -13,7 +13,10 @@
    version="1.1"
    id="svg10"
    sodipodi:docname="Yin_yang_sep.svg"
-   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   inkscape:export-filename="D:\Dropbox\code\java\StS\mods\MarkedMod\src\main\resources\MarkedModResources\images\powers\yin_84.png"
+   inkscape:export-xdpi="22.4"
+   inkscape:export-ydpi="22.4">
   <metadata
      id="metadata16">
     <rdf:RDF>
@@ -42,7 +45,7 @@
      id="namedview12"
      showgrid="false"
      inkscape:zoom="1.155854"
-     inkscape:cx="143.15678"
+     inkscape:cx="2.5680897"
      inkscape:cy="139.20763"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -51,7 +54,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     inkscape:pagecheckerboard="true" />
   <flowRoot
      xml:space="preserve"
      id="flowRoot835"

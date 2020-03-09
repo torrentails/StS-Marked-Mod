@@ -47,11 +47,5 @@ public void upgrade() {
 
 
 @Override
-public void use(AbstractPlayer player, AbstractMonster monster) {
-    if (monster != null) {
-        this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
-    }
-
-    triggerMarks();
-}
+public void use(AbstractPlayer player, AbstractMonster monster) { triggerMarks(); }
 }

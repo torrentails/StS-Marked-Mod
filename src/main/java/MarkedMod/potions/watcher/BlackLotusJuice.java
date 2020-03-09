@@ -27,14 +27,8 @@ public class BlackLotusJuice extends AbstractPotion
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
 
-    public static final Color COLOR_GAS = CardHelper.getColor(
-            DanceOfDeathStance.COLORS[1],
-            DanceOfDeathStance.COLORS[3],
-            DanceOfDeathStance.COLORS[5]);
-    public static final Color COLOR_LIQUID = CardHelper.getColor(
-            DanceOfDeathStance.COLORS[0],
-            DanceOfDeathStance.COLORS[2],
-            DanceOfDeathStance.COLORS[4]);
+    public static final Color COLOR_GAS = DanceOfDeathStance.COLOR_MAX.cpy();
+    public static final Color COLOR_LIQUID = DanceOfDeathStance.COLOR_MIN.cpy().mul(0.5f, 0.5f, 0.5f, 1.0f);
     public static final Color COLOR_SPOTS = null;
 
 

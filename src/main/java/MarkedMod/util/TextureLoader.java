@@ -3,10 +3,10 @@ package MarkedMod.util;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.utils.GdxRuntimeException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
+
+import static MarkedMod.MarkedMod.logger;
 
 // Thank you Blank The Evil!
 
@@ -16,7 +16,6 @@ import java.util.HashMap;
 
 public class TextureLoader {
     private static HashMap<String, Texture> textures = new HashMap<String, Texture>();
-    public static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
 
     /**
      * @param textureString - String path to the texture you want to load relative to resources,

@@ -1,6 +1,6 @@
 {
   "MarkedMod:DanceOfDeathStance": {
     "NAME": "Dance of Death",
-    "DESCRIPTION": ["Enemies take additional damage from attacks equal to half their Mark. NL Apply #b2 Mark each time you deal attack damage to an enemy. NL Upon entering this stance, loose all of your Block. NL You cannot gain Block while in this stance. NL Exit this Stance at the start of your next turn."]
+    "DESCRIPTION": ["Trigger #yMark whenever you deal attack damage. NL Upon entering this stance, loose all of your Block. You cannot gain Block while in this stance. NL Exit this Stance at the start of your next turn."]
   }
 }

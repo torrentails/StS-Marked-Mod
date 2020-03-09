@@ -1,5 +1,6 @@
 package MarkedMod.abstracts;
 
+import MarkedMod.actions.TriggerMarkAction;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.TriggerMarksAction;
@@ -70,11 +71,11 @@ public void applyMark(AbstractCreature p, AbstractCreature m, int amount){
 }
 
 
-public void triggerMarks(){
+public void triggerMarks() {
     this.addToBot(new TriggerMarksAction(this));
 }
 
-public void triggerMark(AbstractCreature p, AbstractCreature m){
-    // TODO: Trigger only one marked enemy.
+public void triggerMark(AbstractCreature monster){
+    this.addToBot(new TriggerMarkAction(monster));
 }
 }

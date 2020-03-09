@@ -3,9 +3,11 @@ package MarkedMod.cards.purple;
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
 import MarkedMod.stances.DanceOfDeathStance;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -26,7 +28,7 @@ public class SlowDance
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = -2;
@@ -35,19 +37,25 @@ public class SlowDance
     public SlowDance()
     {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
-        this.selfRetain = true;
+        // this.selfRetain = true;
+        this.exhaust = true;
     }
 
 
     @Override
-    public boolean cardPlayable(AbstractMonster m) {
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return false;
     }
 
 
     @Override
     public void triggerWhenDrawn() {
-        this.addToBot(new ChangeStanceAction(DanceOfDeathStance.STANCE_ID));
+        this.addToTop(new ChangeStanceAction(DanceOfDeathStance.STANCE_ID));
+
+        if (!upgraded)
+        {
+            this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        }
     }
 
 
@@ -59,7 +67,8 @@ public class SlowDance
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
-            this.selfRetain = false;
+            // this.selfRetain = false;
+            this.exhaust = false;
         }
     }
 

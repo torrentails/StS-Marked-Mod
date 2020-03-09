@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.stances.AbstractStance;
 
 import static MarkedMod.MarkedMod.logger;
 
+@SuppressWarnings("unused")
 public class AbstractStancePatch
 {
 
