@@ -27,6 +27,7 @@ public class GainBlockOnApplyMarkPower extends AbstractPower
     private static final Texture tex84 = TextureLoader.getTexture(makePowerPath("yin_84.png"));
     private static final Texture tex32 = TextureLoader.getTexture(makePowerPath("yin_32.png"));
 
+    private static boolean logged = false;
 
     public GainBlockOnApplyMarkPower(AbstractCreature owner, int newAmount) {
         this.name = NAME;
@@ -47,7 +48,11 @@ public class GainBlockOnApplyMarkPower extends AbstractPower
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(MarkPower.POWER_ID) && source == this.owner && target != this.owner) {
-            this.addToBot(new GainBlockAction(AbstractDungeon.player,
+            if (!logged) {
+                MarkedMod.logger.info("Adding Block");
+                logged = true;
+            }
+            this.addToTop(new GainBlockAction(AbstractDungeon.player,
                                               AbstractDungeon.player,
                                               this.amount,
                                               Settings.FAST_MODE));

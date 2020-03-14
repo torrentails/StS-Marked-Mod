@@ -25,6 +25,7 @@ public class NorthStar
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -50,6 +51,7 @@ public class NorthStar
         if (!upgraded)
         {
             upgradeName();
+            this.rawDescription = UPGRADE_DESCRIPTION;
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
@@ -64,17 +66,13 @@ public class NorthStar
         }
 
         MarkedMod.logger.info(energyOnUse);
-        for (int i = 0; i < energyOnUse; i++)
-        {
-            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters)
-            {
-                if (m != null && !m.isDeadOrEscaped())
-                {
+        for (int i = 0; i < energyOnUse; i++) {
+            for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (m != null && !m.isDeadOrEscaped()) {
                     addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
                     applyMark(player, m, MARK);
                 }
             }
-
             triggerMarks();
         }
 

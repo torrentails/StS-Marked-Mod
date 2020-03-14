@@ -70,7 +70,7 @@ public class DanceOfDeathStance
 
 
     @Override
-    public void atStartOfTurn() {
+    public void onEndOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(NeutralStance.STANCE_ID));
     }
 

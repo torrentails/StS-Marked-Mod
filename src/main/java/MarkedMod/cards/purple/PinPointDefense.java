@@ -28,7 +28,7 @@ private static final CardRarity RARITY = CardRarity.UNCOMMON;
 private static final CardTarget TARGET = CardTarget.SELF;
 private static final CardType TYPE = CardType.POWER;
 
-private static final int COST = 2;
+private static final int COST = 1;
 private static final int MAGIC = 2;
 private static final int UPGRADE_PLUS_MAGIC = 1;
 private static final int MARK = 3;

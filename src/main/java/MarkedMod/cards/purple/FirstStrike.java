@@ -36,6 +36,7 @@ public class FirstStrike
     public FirstStrike() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
     }
 
 

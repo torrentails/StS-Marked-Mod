@@ -13,7 +13,7 @@
 },
 "MarkedMod:GainBlockOnApplyMarkPower": {
         "NAME": "Pin Point Counter",
-        "DESCRIPTIONS": ["Apply #b", " #yMark whenever an enemy deals attack damage to you."]
+        "DESCRIPTIONS": ["Whenever an enemy attacks you, apply #b", " #yMark."]
 },
 "MarkedMod:GracefulMovementsPower": {
         "NAME": "Graceful Movements",

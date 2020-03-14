@@ -5,21 +5,21 @@
   },
   "MarkedMod:FirstStrike": {
     "NAME": "First Strike",
-    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark.",
+    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark. NL *Exhaust",
     "EXTENDED_DESCRIPTION": ["I've already Marked all enemies!"]
   },
   "MarkedMod:GentlePulse": {
     "NAME": "Gentle Pulse",
-    "DESCRIPTION": "All enemies loose HP equal to their *Mark. NL *Exhaust",
-    "UPGRADE_DESCRIPTION": "*Retain NL All enemies loose HP equal to their *Mark. NL *Exhaust."
+    "DESCRIPTION": "All enemies lose HP equal to their *Mark. NL *Exhaust",
+    "UPGRADE_DESCRIPTION": "*Retain NL All enemies lose HP equal to their *Mark. NL *Exhaust."
   },
   "MarkedMod:OneThousandNeedles": {
-    "NAME": "One Thousand Needles",
-    "DESCRIPTION": "Apply !M! *Mark. NL All enemies loose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand."
+    "NAME": "1000 Needles",
+    "DESCRIPTION": "Apply !M! *Mark. NL All enemies lose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand."
   },
   "MarkedMod:PinPointDefense": {
     "NAME": "Pin Point Defense",
-    "DESCRIPTION": "Apply 3 *Mark whenever an enemy deals damage to you. NL Gain !M! *Block whenever you apply *Mark."
+    "DESCRIPTION": "Whenever you are attacked, apply 3 *Mark. NL Gain !M! *Block whenever you apply *Mark."
   },
   "MarkedMod:GracefulMovements": {
     "NAME": "Graceful Movements",
@@ -33,13 +33,13 @@
   },
   "MarkedMod:NorthStar": {
     "NAME": "North Star",
-    "DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
-    "UPGRADE_DESCRIPTION": "Apply 1 *Mark and all enemies loose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
+    "DESCRIPTION": "Apply 1 *Mark X times to all enemies. NL All enemies lose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply 1 *Mark X+1 times to all enemies. NL All enemies lose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
   },
   "MarkedMod:ChiBlocker": {
     "NAME": "Chi Blocker",
-    "DESCRIPTION": "Remove all *Mark. If at least !M! *Mark was removed, the target is *Stunned.",
-    "EXTENDED_DESCRIPTION": ["They haven't been marked yet!"]
+    "DESCRIPTION": "Remove all *Mark. NL If at least !M! *Mark was removed, the target is *Stunned.",
+    "EXTENDED_DESCRIPTION": ["The enemy hasn't been marked yet!"]
   },
   "MarkedMod:Tag": {
     "NAME": "Tag",

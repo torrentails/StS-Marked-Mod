@@ -4,7 +4,7 @@
     <groupId>markedmod</groupId>
     <artifactId>MarkedMod</artifactId>
     <name>Marked Mod</name>
-    <version>0.1.0</version>
+    <version>0.1.2</version>
     <description>Adds cards, relics, a potion, and even a new stance to the Ascetic, all relating to the new \"Mark\" mechanic.</description>
 
     <properties>

@@ -50,11 +50,11 @@ public class ApplyMarkOnAttackedPower
     public int onAttacked(DamageInfo info, int damageAmount) {
         AbstractCreature source = info.owner;
 
-        if (source != this.owner && damageAmount > 0 && info.type == DamageInfo.DamageType.NORMAL)
+        if (source != this.owner && info.type == DamageInfo.DamageType.NORMAL)
         {
 
             this.flash();
-            this.addToBot(new VFXAction(new PressurePointEffect(source.hb.cX, source.hb.cY)));
+            this.addToTop(new VFXAction(new PressurePointEffect(source.hb.cX, source.hb.cY)));
             this.addToTop(new ApplyPowerAction(source, this.owner, new MarkPower(source, this.amount), this.amount));
         }
 
