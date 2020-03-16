@@ -1,8 +1,9 @@
 package MarkedMod;
 
-import MarkedMod.cards.colorless.Tag;
+import MarkedMod.cards.colorless.Needle;
 import MarkedMod.cards.purple.*;
 import MarkedMod.potions.watcher.BlackLotusJuice;
+import MarkedMod.stances.DanceOfDeathStance;
 import MarkedMod.util.IDCheck;
 import MarkedMod.util.TextureLoader;
 import MarkedMod.variables.DefaultCustomVariable;
@@ -239,9 +240,9 @@ public class MarkedMod
         BaseMod.addCard(new GracefulMovements());
         BaseMod.addCard(new NorthStar());
         BaseMod.addCard(new SlowDance());
-        BaseMod.addCard(new ChiBlocker());
+        BaseMod.addCard(new ChiBlock());
 
-        BaseMod.addCard(new Tag());
+        BaseMod.addCard(new Needle());
         
         logger.info("Making sure the cards are unlocked.");
 
@@ -254,9 +255,9 @@ public class MarkedMod
         UnlockTracker.unlockCard(GracefulMovements.ID);
         UnlockTracker.unlockCard(NorthStar.ID);
         UnlockTracker.unlockCard(SlowDance.ID);
-        UnlockTracker.unlockCard(ChiBlocker.ID);
+        UnlockTracker.unlockCard(ChiBlock.ID);
 
-        UnlockTracker.unlockCard(Tag.ID);
+        UnlockTracker.unlockCard(Needle.ID);
         
         logger.info("Done adding cards!");
     }
@@ -302,7 +303,15 @@ public class MarkedMod
         
         if (keywords != null) {
             for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                String description = keyword.DESCRIPTION;
+                for (String name : keyword.NAMES) {
+                    if (name.equals(DanceOfDeathStance.NAME)) {
+                        description = DanceOfDeathStance.DESCRIPTIONS[0];
+                        break;
+                    }
+                }
+
+                BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, description);
             }
         }
     }

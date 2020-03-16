@@ -1,21 +1,22 @@
 {
   "MarkedMod:Acupuncture": {
     "NAME": "Acupuncture",
-    "DESCRIPTION": "Deal !D! damage. NL Add a *Tag to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Add a *Needle to your hand."
   },
   "MarkedMod:FirstStrike": {
     "NAME": "First Strike",
-    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark. NL *Exhaust",
+    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark. NL *Exhaust.",
     "EXTENDED_DESCRIPTION": ["I've already Marked all enemies!"]
   },
   "MarkedMod:GentlePulse": {
     "NAME": "Gentle Pulse",
-    "DESCRIPTION": "All enemies lose HP equal to their *Mark. NL *Exhaust",
+    "DESCRIPTION": "All enemies lose HP equal to their *Mark. NL *Exhaust.",
     "UPGRADE_DESCRIPTION": "*Retain NL All enemies lose HP equal to their *Mark. NL *Exhaust."
   },
   "MarkedMod:OneThousandNeedles": {
     "NAME": "1000 Needles",
-    "DESCRIPTION": "Apply !M! *Mark. NL All enemies lose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand."
+    "DESCRIPTION": "Apply !M! *Mark. NL All enemies lose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand.",
+    "UPGRADE_DESCRIPTION": "*Refund 1 NL Apply !M! *Mark. NL All enemies lose HP equal to their *Mark. NL Whenever you *Scry, return this from the discard pile to your hand."
   },
   "MarkedMod:PinPointDefense": {
     "NAME": "Pin Point Defense",
@@ -23,26 +24,26 @@
   },
   "MarkedMod:GracefulMovements": {
     "NAME": "Graceful Movements",
-    "DESCRIPTION": "At the start of your turn, add !M! *Tag to your hand.",
-    "UPGRADE_DESCRIPTION": "*Innate. NL At the start of your turn, add !M! *Tag to your hand."
+    "DESCRIPTION": "At the start of your turn, add !M! *Needle to your hand.",
+    "UPGRADE_DESCRIPTION": "*Innate. NL At the start of your turn, add !M! *Needle to your hand."
   },
   "MarkedMod:SlowDance": {
     "NAME": "Slow Dance",
-    "DESCRIPTION": "Unplayable. NL When drawn, enter Dance of Death and Exhaust.",
-    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, enter Dance of Death."
+    "DESCRIPTION": "Unplayable. NL When drawn, enter markedmod:Dance_of_Death and *Exhaust.",
+    "UPGRADE_DESCRIPTION": "Unplayable. NL When drawn, enter markedmod:Dance_of_Death."
   },
   "MarkedMod:NorthStar": {
     "NAME": "North Star",
     "DESCRIPTION": "Apply 1 *Mark X times to all enemies. NL All enemies lose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply 1 *Mark X+1 times to all enemies. NL All enemies lose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
   },
-  "MarkedMod:ChiBlocker": {
-    "NAME": "Chi Blocker",
-    "DESCRIPTION": "Remove all *Mark. NL If at least !M! *Mark was removed, the target is *Stunned.",
-    "EXTENDED_DESCRIPTION": ["The enemy hasn't been marked yet!"]
+  "MarkedMod:ChiBlock": {
+    "NAME": "Chi Block",
+    "DESCRIPTION": "Apply 12 *Mark. NL If the target has at least !M! *Mark, they are *Stunned. NL *Exhaust.",
+    "EXTENDED_DESCRIPTION": ["The enemy doesn't have enough Mark."]
   },
-  "MarkedMod:Tag": {
-    "NAME": "Tag",
-    "DESCRIPTION": "Exhaust. NL Apply !M! *Mark."
+  "MarkedMod:Needle": {
+    "NAME": "Needle",
+    "DESCRIPTION": "Apply !M! *Mark. NL *Exhaust."
   }
 }

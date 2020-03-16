@@ -2,12 +2,12 @@ package MarkedMod.stances;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractCustomStance;
+import MarkedMod.actions.RemoveHalfBlockAction;
 import MarkedMod.actions.TriggerMarkAction;
 import MarkedMod.vfx.stance.DanceOfDeathParticleEffect;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -77,7 +77,7 @@ public class DanceOfDeathStance
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0];
+        this.description = DESCRIPTIONS[1];
     }
 
 
@@ -92,7 +92,8 @@ public class DanceOfDeathStance
         // TODO: Add a sakura tree
         AbstractDungeon.effectsQueue.add(new BorderFlashEffect(getColor(), true));
         AbstractDungeon.effectsQueue.add(new StanceChangeParticleGenerator(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, this.ID));
-        AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(AbstractDungeon.player, AbstractDungeon.player));
+
+        AbstractDungeon.actionManager.addToBottom(new RemoveHalfBlockAction(AbstractDungeon.player, AbstractDungeon.player));
     }
 
 

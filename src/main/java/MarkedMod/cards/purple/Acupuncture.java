@@ -2,7 +2,7 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
-import MarkedMod.cards.colorless.Tag;
+import MarkedMod.cards.colorless.Needle;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -38,7 +38,7 @@ private static final int UPGRADE_PLUS_DMG = 2;
 public Acupuncture() {
     super(ID, IMG, COST, TYPE, RARITY, TARGET);
     baseDamage = DAMAGE;
-    this.cardsToPreview = new Tag();
+    this.cardsToPreview = new Needle();
 }
 
 
@@ -57,6 +57,6 @@ public void use(AbstractPlayer player, AbstractMonster monster) {
     AbstractDungeon.actionManager.addToBottom(
         new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
 
-    this.addToBot(new MakeTempCardInHandAction(new Tag(), 1));
+    this.addToBot(new MakeTempCardInHandAction(new Needle(), 1));
 }
 }

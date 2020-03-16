@@ -1,7 +1,7 @@
 package MarkedMod.powers.watcher;
 
 import MarkedMod.MarkedMod;
-import MarkedMod.cards.colorless.Tag;
+import MarkedMod.cards.colorless.Needle;
 import MarkedMod.util.TextureLoader;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
@@ -48,7 +48,7 @@ public class GracefulMovementsPower extends AbstractPower
         {
             if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 this.flash();
-                this.addToBot(new MakeTempCardInHandAction(new Tag(), this.amount, false));
+                this.addToBot(new MakeTempCardInHandAction(new Needle(), this.amount, false));
             }
 
         }

@@ -2,6 +2,7 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.RefundFields;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,51 +17,60 @@ import static MarkedMod.MarkedMod.makeCardPath;
 public class OneThousandNeedles
         extends AbstractMarkedCard {
 
-public static final String ID = MarkedMod.makeID(OneThousandNeedles.class.getSimpleName());
-private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-public static final String IMG = makeCardPath(OneThousandNeedles.class.getSimpleName() + ".png");
+    public static final String ID = MarkedMod.makeID(OneThousandNeedles.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = makeCardPath(OneThousandNeedles.class.getSimpleName() + ".png");
 
 
-public static final String NAME = cardStrings.NAME;
-public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-private static final CardRarity RARITY = CardRarity.UNCOMMON;
-private static final CardTarget TARGET = CardTarget.ENEMY;
-private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
 
-private static final int COST = 1;
-private static final int MAGIC = 2;
-private static final int UPGRADE_MAGIC = 2;
-
-
-public OneThousandNeedles() {
-    super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    baseMagicNumber = magicNumber = MAGIC;
-}
+    private static final int COST = 1;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_MAGIC = 2;
+    private static final int REFUND = 0;
+    private static final int UPGRADE_REFUND = 1;
 
 
-@Override
-public void upgrade() {
-    if (!upgraded) {
-        upgradeName();
-        upgradeMagicNumber(UPGRADE_MAGIC);
-        initializeDescription();
-    }
-}
-
-
-@Override
-public void use(AbstractPlayer player, AbstractMonster monster) {
-    if (monster != null) {
-        this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
+    public OneThousandNeedles() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        baseMagicNumber = magicNumber = MAGIC;
+        RefundFields.baseRefund.set(this, REFUND);
+        RefundFields.refund.set(this, REFUND);
+        RefundFields.isRefundUpgraded.set(this, false);
     }
 
-    applyMark(player, monster, this.magicNumber);
-    triggerMarks();
-}
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeMagicNumber(UPGRADE_MAGIC);
+            RefundFields.baseRefund.set(this, RefundFields.baseRefund.get(this) + UPGRADE_REFUND);
+            RefundFields.refund.set(this, RefundFields.baseRefund.get(this));
+            RefundFields.isRefundUpgraded.set(this, true);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
 
 
-public void triggerOnScry() {
-    this.addToBot(new DiscardToHandAction(this));
-}
+    @Override
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        if (monster != null) {
+            this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
+        }
+
+        applyMark(player, monster, this.magicNumber);
+        triggerMarks();
+    }
+
+
+    public void triggerOnScry() {
+        this.addToBot(new DiscardToHandAction(this));
+    }
 }

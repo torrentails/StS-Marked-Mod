@@ -12,13 +12,13 @@ import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 import static MarkedMod.MarkedMod.makeCardPath;
 
 
-public class Tag
+public class Needle
         extends AbstractMarkedCard
 {
 
-    public static final String ID = MarkedMod.makeID(Tag.class.getSimpleName());
+    public static final String ID = MarkedMod.makeID(Needle.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(Tag.class.getSimpleName() + ".png");
+    public static final String IMG = makeCardPath(Needle.class.getSimpleName() + ".png");
 
 
     public static final String NAME = cardStrings.NAME;
@@ -34,7 +34,7 @@ public class Tag
     private static final int UPGRADE_MAGIC = 2;
 
 
-    public Tag()
+    public Needle()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
