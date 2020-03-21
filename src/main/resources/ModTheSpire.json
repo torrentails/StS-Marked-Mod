@@ -1,12 +1,20 @@
 {
   "modid": "${project.artifactId}",
   "name": "${project.name}",
-  "author_list": ["torrentails"],
+  "author_list": [
+    "torrentails"
+  ],
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
-  "dependencies": ["basemod", "stslib"],
+  "dependencies": [
+    "basemod",
+    "stslib"
+  ],
+  "optional_dependencies": [
+    "infinitespire"
+  ],
   "update_json": ""
 }
 

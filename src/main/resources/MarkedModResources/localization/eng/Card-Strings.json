@@ -40,7 +40,13 @@
   "MarkedMod:ChiBlock": {
     "NAME": "Chi Block",
     "DESCRIPTION": "Apply 12 *Mark. NL If the target has at least !M! *Mark, they are *Stunned. NL *Exhaust.",
-    "EXTENDED_DESCRIPTION": ["The enemy doesn't have enough Mark."]
+    "EXTENDED_DESCRIPTION": [
+      "The enemy doesn't have enough Mark."
+    ]
+  },
+  "MarkedMod:Puncture": {
+    "NAME": "Puncture",
+    "DESCRIPTION": "Apply !M! *Mark. NL *Exhaust."
   },
   "MarkedMod:Needle": {
     "NAME": "Needle",

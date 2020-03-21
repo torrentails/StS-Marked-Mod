@@ -1,5 +1,6 @@
 package MarkedMod;
 
+import MarkedMod.cards.black.Puncture;
 import MarkedMod.cards.colorless.Needle;
 import MarkedMod.cards.purple.*;
 import MarkedMod.potions.watcher.BlackLotusJuice;
@@ -15,14 +16,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.characters.Watcher;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import infinitespire.patches.CardColorEnumPatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,6 +44,7 @@ public class MarkedMod
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
+        PreStartGameSubscriber,
         PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(MarkedMod.class.getName());
     private static String modID;
@@ -56,6 +62,7 @@ public class MarkedMod
 
     
     public static String makeCardPath(String resourcePath) {
+        // TODO: Check if card art exists, loading default texture if it doesn't
         // return getModID() + "Resources/images/cards/" + resourcePath;
         // TODO: PICTURES!!!
         return getModID() + "Resources/images/cards/beta_img.png";
@@ -243,10 +250,7 @@ public class MarkedMod
         BaseMod.addCard(new ChiBlock());
 
         BaseMod.addCard(new Needle());
-        
-        logger.info("Making sure the cards are unlocked.");
 
-        // TODO: Unlock packages maybe?
         UnlockTracker.unlockCard(Acupuncture.ID);
         UnlockTracker.unlockCard(FirstStrike.ID);
         UnlockTracker.unlockCard(GentlePulse.ID);
@@ -258,7 +262,13 @@ public class MarkedMod
         UnlockTracker.unlockCard(ChiBlock.ID);
 
         UnlockTracker.unlockCard(Needle.ID);
-        
+
+        if (Loader.isModLoaded("infinitespire")) {
+            logger.info("Infinite Spire found: adding black cards");
+            BaseMod.addCard(new Puncture());
+            UnlockTracker.unlockCard(Puncture.ID);
+        }
+
         logger.info("Done adding cards!");
     }
 
@@ -317,6 +327,18 @@ public class MarkedMod
     }
 
 
+    @Override
+    public void receivePreStartGame() {
+        if (Loader.isModLoaded("infinitespire")) {
+            if (AbstractDungeon.player != null && !(AbstractDungeon.player instanceof Watcher)) {
+                BaseMod.removeCard(Puncture.ID, CardColorEnumPatch.CardColorPatch.INFINITE_BLACK);
+            } else {
+                BaseMod.addCard(new Puncture());
+            }
+        }
+    }
+
+
     public static String makeID(String idText) {
         return getModID() + ":" + idText;
     }
@@ -324,6 +346,7 @@ public class MarkedMod
 
     // Can be quickly inserted anywhere to get a stack trace
     // Probably an easier/better way to do this but I don't care enough rn
+    @SuppressWarnings("unused")
     public static void getStacktrace(boolean doTheThing) {
         if (doTheThing) {
             try

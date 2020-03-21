@@ -2,7 +2,6 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
 import static MarkedMod.MarkedMod.makeCardPath;
 
@@ -65,14 +63,17 @@ public class NorthStar
             energyOnUse = EnergyPanel.totalCount;
         }
 
-        MarkedMod.logger.info(energyOnUse);
-        for (int i = 0; i < energyOnUse; i++) {
+        int i;
+        for (i = 0; i < energyOnUse; i++) {
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (m != null && !m.isDeadOrEscaped()) {
-                    addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
+                    // addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
                     applyMark(player, m, MARK);
                 }
             }
+        }
+
+        for (i = 0; i < energyOnUse; i++) {
             triggerMarks();
         }
 
