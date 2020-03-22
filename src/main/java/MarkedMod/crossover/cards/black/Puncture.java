@@ -1,4 +1,4 @@
-package MarkedMod.cards.black;
+package MarkedMod.crossover.cards.black;
 
 import MarkedMod.MarkedMod;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -44,7 +44,6 @@ public class Puncture
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(0);
-            // this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

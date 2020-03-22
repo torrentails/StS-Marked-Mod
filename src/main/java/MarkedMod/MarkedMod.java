@@ -1,16 +1,17 @@
 package MarkedMod;
 
-import MarkedMod.cards.black.Puncture;
 import MarkedMod.cards.colorless.Needle;
 import MarkedMod.cards.purple.*;
+import MarkedMod.crossover.InfiniteSpire;
 import MarkedMod.potions.watcher.BlackLotusJuice;
+import MarkedMod.relics.AcupunctureKit;
 import MarkedMod.stances.DanceOfDeathStance;
 import MarkedMod.util.IDCheck;
 import MarkedMod.util.TextureLoader;
-import MarkedMod.variables.DefaultCustomVariable;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -21,13 +22,10 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.Watcher;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import infinitespire.patches.CardColorEnumPatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,13 +52,15 @@ public class MarkedMod
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true;
 
+    public static boolean isInfiniteSpireLoaded = false;
+
     private static final String MODNAME = "Marked Mod";
     private static final String AUTHOR = "torrentails";
     private static final String DESCRIPTION = "Adds cards, relics, a potion, and even a new stance to the Ascetic, all relating to the new \"Mark\" mechanic.";
 
     public static final String BADGE_IMAGE = "MarkedModResources/images/Badge.png";
 
-    
+
     public static String makeCardPath(String resourcePath) {
         // TODO: Check if card art exists, loading default texture if it doesn't
         // return getModID() + "Resources/images/cards/" + resourcePath;
@@ -157,6 +157,10 @@ public class MarkedMod
     public static void initialize() {
         logger.info("Initializing " + MODNAME);
         MarkedMod defaultmod = new MarkedMod();
+        if (Loader.isModLoaded("infinitespire")) {
+            MarkedMod.isInfiniteSpireLoaded = true;
+            logger.info("Infinite Spire is loaded");
+        }
         logger.info(MODNAME + " Initialized");
     }
 
@@ -167,8 +171,7 @@ public class MarkedMod
 
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
 
-        //TODO:
-        // Create the Mod Menu
+        //TODO: Create the Mod Menu maybe; don't really have a need for it
         ModPanel settingsPanel = new ModPanel();
         
         // Create the on/off button:
@@ -213,32 +216,25 @@ public class MarkedMod
     @Override
     public void receiveEditRelics() {
         logger.info("Adding relics");
-        
-        // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
-        // BaseMod.addRelicToCustomPool(new PlaceholderRelic(), AbstractCard.CardColor.PURPLE);
-        // BaseMod.addRelicToCustomPool(new BottledPlaceholderRelic(), AbstractCard.CardColor.PURPLE);
-        // BaseMod.addRelicToCustomPool(new DefaultClickableRelic(), AbstractCard.CardColor.PURPLE);
-        
-        // This adds a relic to the Shared pool. Every character can find this relic.
-        // BaseMod.addRelic(new PlaceholderRelic2(), RelicType.SHARED);
-        
-        // Mark relics as seen (the others are all starters so they're marked as seen in the character file
-        // UnlockTracker.markRelicAsSeen(BottledPlaceholderRelic.ID);
+
+        BaseMod.addRelic(new AcupunctureKit(), RelicType.PURPLE);
+        UnlockTracker.markRelicAsSeen(AcupunctureKit.ID);
+
         logger.info("Done adding relics!");
 
+        // TODO: I feel like this shoud go somewhere else but, it works so... meh ¯\_(ツ)_/¯
         receiveEditPotions();
     }
 
     
     @Override
     public void receiveEditCards() {
-        logger.info("Adding variables");
         pathCheck();
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
-        
+        // logger.info("Adding variables");
+        // BaseMod.addDynamicVariable(new DefaultCustomVariable());
+
         logger.info("Adding cards");
 
-        // TODO: Add all the other cards
         BaseMod.addCard(new Acupuncture());
         BaseMod.addCard(new FirstStrike());
         BaseMod.addCard(new GentlePulse());
@@ -263,10 +259,8 @@ public class MarkedMod
 
         UnlockTracker.unlockCard(Needle.ID);
 
-        if (Loader.isModLoaded("infinitespire")) {
-            logger.info("Infinite Spire found: adding black cards");
-            BaseMod.addCard(new Puncture());
-            UnlockTracker.unlockCard(Puncture.ID);
+        if (MarkedMod.isInfiniteSpireLoaded) {
+            InfiniteSpire.loadWatcherBlackCards();
         }
 
         logger.info("Done adding cards!");
@@ -275,7 +269,6 @@ public class MarkedMod
     
     @Override
     public void receiveEditStrings() {
-        logger.info("You seeing this?");
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
         BaseMod.loadCustomStringsFile(CardStrings.class,
@@ -329,12 +322,8 @@ public class MarkedMod
 
     @Override
     public void receivePreStartGame() {
-        if (Loader.isModLoaded("infinitespire")) {
-            if (AbstractDungeon.player != null && !(AbstractDungeon.player instanceof Watcher)) {
-                BaseMod.removeCard(Puncture.ID, CardColorEnumPatch.CardColorPatch.INFINITE_BLACK);
-            } else {
-                BaseMod.addCard(new Puncture());
-            }
+        if (MarkedMod.isInfiniteSpireLoaded) {
+            InfiniteSpire.removeBardBlackCards();
         }
     }
 
