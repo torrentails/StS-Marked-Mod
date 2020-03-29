@@ -1,0 +1,49 @@
+Keywords are within //. Refer to the file "Keywords" for correspondence.
+
+1.first strike 
+name: 先手打击
+content: 如果目标没有/印记/，给予9层/印记/。/消耗/。
+
+2.gentle pulse
+name: 柔和冲击
+content: 触发/印记/的伤害效果。/消耗/。
+
+3.acupuncture
+name: 针灸
+content: 造成3点伤害。将一根/针/加入你的手牌。
+
+4./needle/
+name: /针/
+content: 给予2层/印记/。/消耗/。
+
+5.1000 needles
+name: 千根针
+content: 给予2层/印记/。触发/印记/的伤害效果。
+         你每次/预见/时，将这张牌从弃牌堆返回你的手牌。
+
+6.graceful movements
+name: 优雅步法
+content: 在你的回合开始时，将一根/针/加入你的手牌。
+
+7.pin point defense
+name: 针尖防御
+content: 每当你受到攻击，给予攻击来源3层/印记/。
+         每当你给予/印记/，获得2点格挡。
+
+8.chi block
+name: 抱元守一
+content: 给予3层/印记/。如果目标拥有至少30层/印记/，将其/击晕/。/消耗/。
+
+9.north star
+name: 北极星
+content: 给予所有敌人1层/印记/X次。
+         触发/印记/的伤害效果。
+         结束你的回合。/消耗/。
+
+10.slow dance
+name: 曼舞
+content: /不能被打出/。当你抽到这张牌时，进入/死舞/，然后/消耗/。
+
+11.puncture
+name: 穿刺
+content: 给予99层/印记/。/消耗/。

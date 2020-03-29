@@ -1,0 +1,4 @@
+1.acupuncture kit
+name: 针灸套装
+content: 每当你给予/印记/时，额外给予1层/印记/。
+description: 不惧单刃，只怕千针。

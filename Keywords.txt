@@ -1,0 +1,14 @@
+1.dance of death
+name: 死舞
+description:
+每当你造成攻击伤害时，触发/印记/的伤害效果。
+进入这一/姿态/时，失去你当前/格挡/的50%。
+在这一/姿态/中，获得的/格挡/减少50%。
+你在回合结束时自动离开这一/姿态/。
+
+2.印记 = mark
+3.击晕 = stunned
+4.消耗 = exhausted
+5.姿态 = stance
+6.格挡 = block
+7.不能被打出 = unplayable
