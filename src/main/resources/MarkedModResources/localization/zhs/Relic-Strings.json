@@ -1,0 +1,9 @@
+{
+  "MarkedMod:AcupunctureKit": {
+    "NAME": "针灸套装",
+    "FLAVOR": "不惧单刃，只怕千针。",
+    "DESCRIPTIONS": [
+      "每当你给予 #y印记 时，额外给予1层 #y印记 。"
+    ]
+  }
+}
