@@ -1,0 +1,10 @@
+{
+"MarkedMod:PlaceholderPotion": {
+        "NAME": "Placeholder Potion",
+        "DESCRIPTIONS": ["Gain ", " At the end of your turn, lose ", " *Strength."]
+},
+"MarkedMod:BlackLotusJuice": {
+        "NAME": "黑莲汁",
+        "DESCRIPTIONS": ["进入 #y死舞 姿态。"]
+}
+}

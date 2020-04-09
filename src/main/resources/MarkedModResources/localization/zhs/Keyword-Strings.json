@@ -1,0 +1,28 @@
+[
+  {
+    "NAMES": [
+      "keyword",
+      "keywords"
+    ],
+    "DESCRIPTION": "Whenever you play a card, gain 1 dexterity this turn only."
+  },
+  {
+    "PROPER_NAME": "Multiword Keyword",
+    "NAMES": [
+      "Multiword Keyword",
+      "multiword_keyword",
+      "multiword_keywords",
+      "multikey",
+      "multikeyword"
+    ],
+    "DESCRIPTION": "Make sure the first element in the NAMES is the same as your PROPER_NAME. The rest is to match keywords like the single word keyword."
+  },
+  {
+    "PROPER_NAME": "死舞",
+    "NAMES": [
+      "Dance of Death",
+      "dance_of_death"
+    ],
+    "DESCRIPTION": "每当你造成攻击伤害时，触发 #y印记 的伤害效果。 NL 进入这一 #y姿态 时，失去你当前 #y格挡 的50%。 NL 在这一 #y姿态 中，获得的 #y格挡 减少50%。 NL 你在回合结束时自动离开这一 #y姿态 。"
+  }
+]

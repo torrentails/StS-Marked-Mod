@@ -1,0 +1,22 @@
+{
+"MarkedMod:CommonPower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["You applied #b", " keyword.", " keywords."]
+},
+"MarkedMod:RarePower": {
+        "NAME": "Placeholder Power",
+        "DESCRIPTIONS": ["At the start of your turn, TOUCH #b", " enemy." , " enemies."]
+},
+"MarkedMod:ApplyMarkOnAttackedPower": {
+        "NAME": "针尖防御",
+        "DESCRIPTIONS": ["每当你给予 #y印记 ，获得 #b", " 点 #y格挡。"]
+},
+"MarkedMod:GainBlockOnApplyMarkPower": {
+        "NAME": "针尖反击",
+        "DESCRIPTIONS": ["每当你受到攻击，给予攻击来源 #b", " 层 #y印记 。"]
+},
+"MarkedMod:GracefulMovementsPower": {
+        "NAME": "优雅步法",
+        "DESCRIPTIONS": ["在你的回合开始时，将 #b", " 根 #ytag #y（针） 加入你的手牌。", " 根 #ytags #y（针） 加入你的手牌。"]
+}
+}
