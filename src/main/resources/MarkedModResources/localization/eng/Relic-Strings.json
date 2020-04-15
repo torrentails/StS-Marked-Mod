@@ -3,7 +3,7 @@
     "NAME": "Acupuncture Kit",
     "FLAVOR": "Fear not of a single dagger, but of a thousand needles.",
     "DESCRIPTIONS": [
-      "Whenever you apply *Mark, apply 1 more."
+      "Whenever you apply #yMark, apply 1 more."
     ]
   }
 }

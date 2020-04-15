@@ -17,6 +17,6 @@
 },
 "MarkedMod:GracefulMovementsPower": {
         "NAME": "Graceful Movements",
-        "DESCRIPTIONS": ["At the start of your turn, add #b", " #yTag to your hand.", " #yTags to your hand."]
+        "DESCRIPTIONS": ["At the start of your turn, add #b", " #yNeedle to your hand.", " #yNeedles to your hand."]
 }
 }
