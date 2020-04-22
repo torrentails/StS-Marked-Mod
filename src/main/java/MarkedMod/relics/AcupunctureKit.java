@@ -20,7 +20,6 @@ public class AcupunctureKit
 
     public AcupunctureKit() {
         super(ID, IMG, OUTLINE, TIER, SFX);
-        MarkedMod.logger.info("Creating new " + ID);
     }
 
 

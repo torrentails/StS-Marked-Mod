@@ -67,7 +67,6 @@ public class NorthStar
         for (i = 0; i < energyOnUse; i++) {
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (m != null && !m.isDeadOrEscaped()) {
-                    // addToBot(new VFXAction(new PressurePointEffect(m.hb.cX, m.hb.cY)));
                     applyMark(player, m, MARK);
                 }
             }

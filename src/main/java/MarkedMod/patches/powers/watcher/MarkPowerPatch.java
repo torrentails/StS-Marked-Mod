@@ -9,29 +9,30 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 
-
 @SuppressWarnings("unused")
 public class MarkPowerPatch {
 
-    @SpirePatch(clz = MarkPower.class, method = SpirePatch.CONSTRUCTOR)
+    @SpirePatch(clz = MarkPower.class, method = SpirePatch.CONSTRUCTOR, paramtypez={
+            AbstractCreature.class,
+            int.class
+    })
     public static class constructor {
-        public static void Prefix(MarkPower power, AbstractCreature owner, @ByRef int[] amt) {
+        public static void Prefix(MarkPower inst, AbstractCreature owner, @ByRef int[] amt) {
             if (AbstractDungeon.player.hasRelic(AcupunctureKit.ID)) {
                 AbstractDungeon.player.getRelic(AcupunctureKit.ID).flash();
-                amt[0] += 1;
+                ++amt[0];
             }
         }
     }
 
 
-    //TODO: This feels kind of hacky. Maybe look at making this work without creating a card?
     // Why on earth do they need to check the card in the base game anyways??? Seems pointless...
     @SpirePatch(clz = MarkPower.class, method = "triggerMarks")
     public static class triggerMarks {
         private static AbstractCard bypassCard = new PressurePoints();
 
 
-        public static void Prefix(MarkPower power, @ByRef AbstractCard[] card) {
+        public static void Prefix(MarkPower inst, @ByRef AbstractCard[] card) {
             card[0] = bypassCard;
         }
     }

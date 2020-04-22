@@ -16,43 +16,46 @@ import static MarkedMod.MarkedMod.makeCardPath;
 public class PinPointDefense
         extends AbstractMarkedCard {
 
-public static final String ID = MarkedMod.makeID(PinPointDefense.class.getSimpleName());
-private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-public static final String IMG = makeCardPath(PinPointDefense.class.getSimpleName() + ".png");
+    public static final String ID = MarkedMod.makeID(PinPointDefense.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = makeCardPath(PinPointDefense.class.getSimpleName() + ".png");
 
 
-public static final String NAME = cardStrings.NAME;
-public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-private static final CardRarity RARITY = CardRarity.UNCOMMON;
-private static final CardTarget TARGET = CardTarget.SELF;
-private static final CardType TYPE = CardType.POWER;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
 
-private static final int COST = 1;
-private static final int MAGIC = 2;
-private static final int UPGRADE_PLUS_MAGIC = 1;
-private static final int MARK = 3;
-
-
-public PinPointDefense() {
-    super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    baseMagicNumber = magicNumber = MAGIC;
-}
+    private static final int COST = 1;
+    private static final int MAGIC = 2;
+    private static final int UPGRADE_PLUS_MAGIC = 1;
+    private static final int MARK = 3;
 
 
-@Override
-public void upgrade() {
-    if (!upgraded) {
-        upgradeName();
-        this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
-        initializeDescription();
+    public PinPointDefense() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        baseMagicNumber = magicNumber = MAGIC;
     }
-}
 
 
-@Override
-public void use(AbstractPlayer player, AbstractMonster monster) {
-    this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackedPower(player, MARK), MARK));
-    this.addToBot(new ApplyPowerAction(player, player, new GainBlockOnApplyMarkPower(player, this.magicNumber), this.magicNumber));
-}
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC);
+            initializeDescription();
+        }
+    }
+
+
+    @Override
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        this.addToBot(new ApplyPowerAction(player, player, new ApplyMarkOnAttackedPower(player, MARK), MARK));
+        this.addToBot(new ApplyPowerAction(player,
+                                           player,
+                                           new GainBlockOnApplyMarkPower(player, this.magicNumber),
+                                           this.magicNumber));
+    }
 }
