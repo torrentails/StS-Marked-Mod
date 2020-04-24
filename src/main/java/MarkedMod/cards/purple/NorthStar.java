@@ -31,8 +31,8 @@ public class NorthStar
 
     private static final int COST = -1;
     private static final int MAGIC = 1;
-    private static final int UPGRADE_MAGIC = 1;
-    private static final int MARK = 1;
+    // private static final int UPGRADE_MAGIC = 1;
+    // private static final int MARK = 1;
 
 
     public NorthStar()
@@ -50,7 +50,7 @@ public class NorthStar
         {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            // upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
@@ -59,15 +59,14 @@ public class NorthStar
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        if (energyOnUse < EnergyPanel.totalCount) {
-            energyOnUse = EnergyPanel.totalCount;
-        }
+        if (energyOnUse < EnergyPanel.totalCount) energyOnUse = EnergyPanel.totalCount;
+        if (upgraded) energyOnUse++;
 
         int i;
         for (i = 0; i < energyOnUse; i++) {
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 if (m != null && !m.isDeadOrEscaped()) {
-                    applyMark(player, m, MARK);
+                    applyMark(player, m, magicNumber);
                 }
             }
         }

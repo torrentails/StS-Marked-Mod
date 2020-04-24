@@ -5,7 +5,7 @@
     <groupId>markedmod</groupId>
     <artifactId>MarkedMod</artifactId>
     <name>Marked Mod</name>
-    <version>0.1.7</version>
+    <version>0.1.8</version>
     <description>Adds cards, relics, a potion, and even a new stance to the Watcher, all relating to the new \"Mark\"
         mechanic.
     </description>
