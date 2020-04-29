@@ -5,9 +5,11 @@ This mod adds:
 
 - 10 new cards for the Ascetic
 - 1 potion
-- 2 relics
+- 1 relic
 - A whole new stance, the Dance of Death
 
-This mod is still a work in progress so thigs are subject to change.
-
 Wanna contribute? I tend to leave a bunch of `TODO:` comments around the place for ideas and additions; have at it :-)
+
+Credits:
+* Mod author: [torrentails](https://github.com/torrentails)
+* ZHS translation: [mowenyu](https://github.com/mowenyu)

@@ -271,20 +271,17 @@ public class MarkedMod
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/Card-Strings.json");
+        String path = getModID() + "Resources/localization/" + Settings.language.toString().toLowerCase();
 
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/Power-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, path + "/Card-Strings.json");
 
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/Relic-Strings.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, path + "/Power-Strings.json");
+
+        BaseMod.loadCustomStringsFile(RelicStrings.class, path + "/Relic-Strings.json");
         
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/Potion-Strings.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, path + "/Potion-Strings.json");
 
-        BaseMod.loadCustomStringsFile(StanceStrings.class,
-                                      getModID() + "Resources/localization/eng/Stance-Strings.json");
+        BaseMod.loadCustomStringsFile(StanceStrings.class, path + "/Stance-Strings.json");
         
         logger.info("Done editing strings");
     }
@@ -301,7 +298,9 @@ public class MarkedMod
         // In Keyword-Strings.json you would have PROPER_NAME as A Long Keyword and the first element in NAMES be a long keyword, and the second element be a_long_keyword
         
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String path = getModID() + "Resources/localization/" + Settings.language.toString().toLowerCase();
+
+        String json = Gdx.files.internal(path + "/Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
         
         if (keywords != null) {

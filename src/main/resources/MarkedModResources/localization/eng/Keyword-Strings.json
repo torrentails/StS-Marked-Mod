@@ -23,6 +23,6 @@
       "Dance of Death",
       "dance_of_death"
     ],
-    "DESCRIPTION": "#rERROR!"
+    "DESCRIPTION": "Trigger #yMark whenever you deal attack damage. NL Upon entering this stance, lose half of your #yBlock. NL #yBlock gain is halved while in this #yStance. NL Exit this #yStance at the end of your turn."
   }
 ]

@@ -29,8 +29,8 @@
   },
   "MarkedMod:SlowDance": {
     "NAME": "曼舞",
-    "DESCRIPTION": "*不能被打出 。 NL 当你抽到这张牌时，进入  markedmod:Dance_of_Death ，然后 *消耗 。",
-    "UPGRADE_DESCRIPTION": "*不能被打出 。 NL 当你抽到这张牌时，进入 markedmod:Dance_of_Death 。"
+    "DESCRIPTION": "*不能被打出 。 NL 当你抽到这张牌时，进入  markedmod:死舞 ，然后 *消耗 。",
+    "UPGRADE_DESCRIPTION": "*不能被打出 。 NL 当你抽到这张牌时，进入 markedmod:死舞 。"
   },
   "MarkedMod:NorthStar": {
     "NAME": "北极星",
