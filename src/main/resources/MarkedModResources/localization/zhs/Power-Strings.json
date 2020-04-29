@@ -17,6 +17,6 @@
 },
 "MarkedMod:GracefulMovementsPower": {
         "NAME": "优雅步法",
-        "DESCRIPTIONS": ["在你的回合开始时，将 #b", " 根 #ytag #y（针） 加入你的手牌。", " 根 #ytags #y（针） 加入你的手牌。"]
+        "DESCRIPTIONS": ["在你的回合开始时，将 #b", " 根 #y针 加入你的手牌。", " 根 #ytags #y（针） 加入你的手牌。"]
 }
 }
