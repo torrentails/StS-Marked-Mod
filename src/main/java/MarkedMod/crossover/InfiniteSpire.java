@@ -6,15 +6,18 @@ import com.megacrit.cardcrawl.characters.Watcher;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import infinitespire.patches.CardColorEnumPatch;
 
+import static MarkedMod.MarkedMod.logger;
+
 
 public class InfiniteSpire {
 
     public static void loadWatcherBlackCards() {
+        logger.info(Puncture.TEXTURE);
         BaseMod.addCard(new Puncture());
     }
 
 
-    public static void removeBardBlackCards() {
+    public static void removeWatcherBlackCards() {
         if (AbstractDungeon.player != null && !(AbstractDungeon.player instanceof Watcher)) {
             BaseMod.removeCard(Puncture.ID, CardColorEnumPatch.CardColorPatch.INFINITE_BLACK);
         } else {

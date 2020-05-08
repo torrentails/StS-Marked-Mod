@@ -9,16 +9,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
-import static MarkedMod.MarkedMod.makeCardPath;
-
 
 public class Needle
-        extends AbstractMarkedCard
-{
+        extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(Needle.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(Needle.class.getSimpleName() + ".png");
+    public static final String IMG = Needle.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;
@@ -34,8 +31,7 @@ public class Needle
     private static final int UPGRADE_MAGIC = 2;
 
 
-    public Needle()
-    {
+    public Needle() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.exhaust = true;
@@ -43,10 +39,8 @@ public class Needle
 
 
     @Override
-    public void upgrade()
-    {
-        if (!upgraded)
-        {
+    public void upgrade() {
+        if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
@@ -55,10 +49,8 @@ public class Needle
 
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
-    {
-        if (monster != null)
-        {
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        if (monster != null) {
             this.addToBot(new VFXAction(new PressurePointEffect(monster.hb.cX, monster.hb.cY)));
         }
 

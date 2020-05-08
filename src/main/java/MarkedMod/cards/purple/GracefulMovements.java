@@ -14,12 +14,11 @@ import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class GracefulMovements
-        extends AbstractMarkedCard
-{
+        extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(GracefulMovements.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(GracefulMovements.class.getSimpleName() + ".png");
+    public static final String IMG = GracefulMovements.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;
@@ -36,8 +35,7 @@ public class GracefulMovements
     private boolean next_upgrade_magic;
 
 
-    public GracefulMovements()
-    {
+    public GracefulMovements() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         this.next_upgrade_magic = false;
@@ -46,10 +44,8 @@ public class GracefulMovements
 
 
     @Override
-    public void upgrade()
-    {
-        if (!upgraded)
-        {
+    public void upgrade() {
+        if (!upgraded) {
             upgradeName();
             // For mods that enable multiple upgrades.
             if (this.next_upgrade_magic) {
@@ -65,8 +61,10 @@ public class GracefulMovements
 
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
-    {
-        this.addToBot(new ApplyPowerAction(player, player, new GracefulMovementsPower(player, this.magicNumber), this.magicNumber));
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        this.addToBot(new ApplyPowerAction(player,
+                                           player,
+                                           new GracefulMovementsPower(player, this.magicNumber),
+                                           this.magicNumber));
     }
 }

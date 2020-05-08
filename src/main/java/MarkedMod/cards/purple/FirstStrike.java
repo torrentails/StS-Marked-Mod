@@ -18,7 +18,7 @@ public class FirstStrike
 
     public static final String ID = MarkedMod.makeID(FirstStrike.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(FirstStrike.class.getSimpleName() + ".png");
+    public static final String IMG = FirstStrike.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;

@@ -79,7 +79,7 @@ Block Chi
 	0:Remove all Mark. If at least [30:-10] Mark was removed, the target is stunned.
 
 
-Tag
+Needle
 	skill
 	common
 	0

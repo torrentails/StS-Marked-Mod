@@ -16,6 +16,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
@@ -33,6 +34,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
+
+import static MarkedMod.util.TextureLoader.loadTexture;
 
 
 @SpireInitializer
@@ -62,10 +65,14 @@ public class MarkedMod
 
 
     public static String makeCardPath(String resourcePath) {
-        // TODO: Check if card art exists, loading default texture if it doesn't
-        // return getModID() + "Resources/images/cards/" + resourcePath;
-        // TODO: PICTURES!!!
-        return getModID() + "Resources/images/cards/beta_img.png";
+        String path = getModID() + "Resources/images/cards/" + resourcePath;
+        try {
+            loadTexture(path);
+            return path;
+        } catch (GdxRuntimeException e) {
+            logger.info("Could not find texture: " + path);
+            return getModID() + "Resources/images/cards/beta_img.png";
+        }
     }
     
     public static String makeRelicPath(String resourcePath) {
@@ -322,7 +329,7 @@ public class MarkedMod
     @Override
     public void receivePreStartGame() {
         if (MarkedMod.isInfiniteSpireLoaded) {
-            InfiniteSpire.removeBardBlackCards();
+            InfiniteSpire.removeWatcherBlackCards();
         }
     }
 

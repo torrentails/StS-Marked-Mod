@@ -1,6 +1,8 @@
 # Marked Mod
 I love the new Mark mechanic but was annoyed that there was only a single card that made use of it. so I added some of my own.
 
+Now with art by [@victorformat](https://twitter.com/victorformat)
+
 This mod adds:
 
 - 10 new cards for the Ascetic
@@ -12,4 +14,5 @@ Wanna contribute? I tend to leave a bunch of `TODO:` comments around the place f
 
 Credits:
 * Mod author: [torrentails](https://github.com/torrentails)
+* Art: [@victorformat](https://twitter.com/victorformat)
 * ZHS translation: [mowenyu](https://github.com/mowenyu)

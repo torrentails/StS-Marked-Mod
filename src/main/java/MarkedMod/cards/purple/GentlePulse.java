@@ -12,38 +12,38 @@ import static MarkedMod.MarkedMod.makeCardPath;
 public class GentlePulse
         extends AbstractMarkedCard {
 
-public static final String ID = MarkedMod.makeID(GentlePulse.class.getSimpleName());
-private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-public static final String IMG = makeCardPath(GentlePulse.class.getSimpleName() + ".png");
+    public static final String ID = MarkedMod.makeID(GentlePulse.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = GentlePulse.class.getSimpleName();
 
 
-public static final String NAME = cardStrings.NAME;
-public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-private static final CardRarity RARITY = CardRarity.COMMON;
-private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
-private static final CardType TYPE = CardType.SKILL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
 
-private static final int COST = 0;
-
-
-public GentlePulse() {
-    super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    this.exhaust = true;
-}
+    private static final int COST = 0;
 
 
-@Override
-public void upgrade() {
-    if (!upgraded) {
-        upgradeName();
-        this.selfRetain = true;
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
+    public GentlePulse() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        this.exhaust = true;
     }
-}
 
 
-@Override
-public void use(AbstractPlayer player, AbstractMonster monster) { triggerMarks(); }
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            this.selfRetain = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
+        }
+    }
+
+
+    @Override
+    public void use(AbstractPlayer player, AbstractMonster monster) { triggerMarks(); }
 }

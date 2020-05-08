@@ -2,11 +2,17 @@ package MarkedMod.abstracts;
 
 import MarkedMod.actions.TriggerMarkAction;
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.TriggerMarksAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import static MarkedMod.MarkedMod.makeCardPath;
 import static com.megacrit.cardcrawl.core.CardCrawlGame.languagePack;
 
 
@@ -66,13 +72,63 @@ public abstract class AbstractMarkedCard
                               final CardRarity rarity,
                               final CardTarget target) {
 
-        super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        super(id, name, makeCardPath(img + ".png"), cost, rawDescription, type, color, rarity, target);
+
+        loadCardImage(img, true);
 
         isCostModified = false;
         isCostModifiedForTurn = false;
         isDamageModified = false;
         isBlockModified = false;
         isMagicNumberModified = false;
+    }
+
+
+    protected Texture getPortraitImage() {
+        if (this.textureImg == null) {
+            return null;
+        } else {
+            String newPath;
+
+            if (!UnlockTracker.betaCardPref.getBoolean(this.cardID)) {
+                int endingIndex = this.textureImg.lastIndexOf(".");
+                newPath = this.textureImg.substring(0, endingIndex) + CustomCard.PORTRAIT_ENDING + this.textureImg.substring(endingIndex);
+            } else {
+                int endingIndex = this.textureImg.lastIndexOf(".");
+                int midIndex = this.textureImg.lastIndexOf("/") + 1;
+                newPath = this.textureImg.substring(0, midIndex) + "beta/" + this.textureImg.substring(midIndex, endingIndex) +  CustomCard.PORTRAIT_ENDING + this.textureImg.substring(endingIndex);
+            }
+
+            System.out.println("Finding texture: " + newPath);
+
+            Texture portraitTexture;
+            try {
+                portraitTexture = ImageMaster.loadImage(newPath);
+            } catch (Exception var5) {
+                portraitTexture = null;
+            }
+
+            return portraitTexture;
+        }
+    }
+
+
+    public void loadCardImage(String img, @SuppressWarnings("SameParameterValue") boolean betaImage) {
+        if (!betaImage) { loadCardImage(img); return; }
+
+        String path = makeCardPath("beta/" + img + ".png");
+        Texture cardTexture;
+        if (imgMap.containsKey(path)) {
+            cardTexture = imgMap.get(path);
+        } else {
+            cardTexture = ImageMaster.loadImage(path);
+            imgMap.put(path, cardTexture);
+        }
+
+        cardTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+        int tw = cardTexture.getWidth();
+        int th = cardTexture.getHeight();
+        this.jokePortrait = new AtlasRegion(cardTexture, 0, 0, tw, th);
     }
 
 
@@ -95,7 +151,7 @@ public abstract class AbstractMarkedCard
     }
 
 
-    public void triggerMark(AbstractCreature monster) {
-        this.addToBot(new TriggerMarkAction(monster));
+    public void triggerMark(AbstractCreature target) {
+        this.addToBot(new TriggerMarkAction(target));
     }
 }

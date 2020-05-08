@@ -41,8 +41,8 @@ public class TextureLoader {
      *                      Example: "img/ui/missingtexture.png"
      * @throws GdxRuntimeException
      */
-    private static void loadTexture(final String textureString) throws GdxRuntimeException {
-        logger.info("DefaultMod | Loading Texture: " + textureString);
+    public static void loadTexture(final String textureString) throws GdxRuntimeException {
+        logger.info("Loading Texture: " + textureString);
         Texture texture = new Texture(textureString);
         texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
         textures.put(textureString, texture);

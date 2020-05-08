@@ -16,7 +16,7 @@ public class ChiBlock
 
     public static final String ID = MarkedMod.makeID(ChiBlock.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(ChiBlock.class.getSimpleName() + ".png");
+    public static final String IMG = ChiBlock.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;
@@ -43,7 +43,7 @@ public class ChiBlock
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            int magicNumberDelta = Math.round((float)this.baseMagicNumber * UPGRADE_MAGIC_MUL);
+            int magicNumberDelta = Math.round((float) this.baseMagicNumber * UPGRADE_MAGIC_MUL);
             upgradeMagicNumber(-magicNumberDelta);
             initializeDescription();
         }

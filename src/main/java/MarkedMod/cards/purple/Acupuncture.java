@@ -19,44 +19,46 @@ import static MarkedMod.MarkedMod.makeCardPath;
 public class Acupuncture extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(Acupuncture.class.getSimpleName());
-private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-public static final String IMG = makeCardPath(Acupuncture.class.getSimpleName() + ".png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = Acupuncture.class.getSimpleName();
 
 
-public static final String NAME = cardStrings.NAME;
-public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-private static final CardRarity RARITY = CardRarity.COMMON;
-private static final CardTarget TARGET = CardTarget.ENEMY;
-private static final CardType TYPE = CardType.ATTACK;
+    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
 
-private static final int COST = 1;
-private static final int DAMAGE = 3;
-private static final int UPGRADE_PLUS_DMG = 2;
-
-
-public Acupuncture() {
-    super(ID, IMG, COST, TYPE, RARITY, TARGET);
-    baseDamage = DAMAGE;
-    this.cardsToPreview = new Needle();
-}
+    private static final int COST = 1;
+    private static final int DAMAGE = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
 
-@Override
-public void upgrade() {
-    if (!upgraded) {
-        upgradeName();
-        upgradeDamage(UPGRADE_PLUS_DMG);
-        initializeDescription();
+    public Acupuncture() {
+        super(ID, IMG, COST, TYPE, RARITY, TARGET);
+        baseDamage = DAMAGE;
+        this.cardsToPreview = new Needle();
     }
-}
 
 
-@Override
-public void use(AbstractPlayer player, AbstractMonster monster) {
-    AbstractDungeon.actionManager.addToBottom(
-        new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            upgradeName();
+            upgradeDamage(UPGRADE_PLUS_DMG);
+            initializeDescription();
+        }
+    }
 
-    this.addToBot(new MakeTempCardInHandAction(new Needle(), 1));
-}
+
+    @Override
+    public void use(AbstractPlayer player, AbstractMonster monster) {
+        AbstractDungeon.actionManager.addToBottom(
+                new DamageAction(monster,
+                                 new DamageInfo(player, this.damage, damageTypeForTurn),
+                                 AbstractGameAction.AttackEffect.LIGHTNING));
+
+        this.addToBot(new MakeTempCardInHandAction(new Needle(), 1));
+    }
 }

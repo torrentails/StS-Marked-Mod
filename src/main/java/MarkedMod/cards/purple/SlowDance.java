@@ -15,12 +15,11 @@ import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class SlowDance
-        extends AbstractMarkedCard
-{
+        extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(SlowDance.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = makeCardPath(SlowDance.class.getSimpleName() + ".png");
+    public static final String IMG = SlowDance.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;
@@ -34,8 +33,7 @@ public class SlowDance
     private static final int COST = -2;
 
 
-    public SlowDance()
-    {
+    public SlowDance() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         this.exhaust = true;
     }
@@ -51,18 +49,15 @@ public class SlowDance
     public void triggerWhenDrawn() {
         this.addToTop(new ChangeStanceAction(DanceOfDeathStance.STANCE_ID));
 
-        if (!upgraded)
-        {
+        if (!upgraded) {
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }
 
 
     @Override
-    public void upgrade()
-    {
-        if (!upgraded)
-        {
+    public void upgrade() {
+        if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();

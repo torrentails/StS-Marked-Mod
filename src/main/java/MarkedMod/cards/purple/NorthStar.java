@@ -14,11 +14,11 @@ import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class NorthStar
-        extends AbstractMarkedCard
-{
+        extends AbstractMarkedCard {
 
     public static final String ID = MarkedMod.makeID(NorthStar.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);public static final String IMG = makeCardPath(NorthStar.class.getSimpleName() + ".png");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = NorthStar.class.getSimpleName();
 
 
     public static final String NAME = cardStrings.NAME;
@@ -31,12 +31,9 @@ public class NorthStar
 
     private static final int COST = -1;
     private static final int MAGIC = 1;
-    // private static final int UPGRADE_MAGIC = 1;
-    // private static final int MARK = 1;
 
 
-    public NorthStar()
-    {
+    public NorthStar() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
         exhaust = true;
@@ -44,21 +41,17 @@ public class NorthStar
 
 
     @Override
-    public void upgrade()
-    {
-        if (!upgraded)
-        {
+    public void upgrade() {
+        if (!upgraded) {
             upgradeName();
             this.rawDescription = UPGRADE_DESCRIPTION;
-            // upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
 
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
-    {
+    public void use(AbstractPlayer player, AbstractMonster monster) {
         if (energyOnUse < EnergyPanel.totalCount) energyOnUse = EnergyPanel.totalCount;
         if (upgraded) energyOnUse++;
 
