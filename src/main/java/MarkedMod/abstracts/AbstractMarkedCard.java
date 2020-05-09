@@ -90,7 +90,7 @@ public abstract class AbstractMarkedCard
         } else {
             String newPath;
 
-            if (!UnlockTracker.betaCardPref.getBoolean(this.cardID)) {
+            if (!UnlockTracker.betaCardPref.getBoolean(this.cardID, false)) {
                 int endingIndex = this.textureImg.lastIndexOf(".");
                 newPath = this.textureImg.substring(0, endingIndex) + CustomCard.PORTRAIT_ENDING + this.textureImg.substring(endingIndex);
             } else {
