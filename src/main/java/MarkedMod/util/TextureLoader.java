@@ -42,7 +42,7 @@ public class TextureLoader {
      * @throws GdxRuntimeException
      */
     public static void loadTexture(final String textureString) throws GdxRuntimeException {
-        logger.info("Loading Texture: " + textureString);
+        logger.debug("Loading Texture: " + textureString);
         Texture texture = new Texture(textureString);
         texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
         textures.put(textureString, texture);

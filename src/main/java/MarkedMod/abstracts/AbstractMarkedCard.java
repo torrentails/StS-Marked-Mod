@@ -125,7 +125,12 @@ public abstract class AbstractMarkedCard
             imgMap.put(path, cardTexture);
         }
 
-        cardTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+        try {
+            cardTexture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         int tw = cardTexture.getWidth();
         int th = cardTexture.getHeight();
         this.jokePortrait = new AtlasRegion(cardTexture, 0, 0, tw, th);

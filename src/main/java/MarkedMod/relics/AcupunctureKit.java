@@ -14,8 +14,8 @@ public class AcupunctureKit
     public static final String ID = MarkedMod.makeID(AcupunctureKit.class.getSimpleName());
     public static final RelicTier TIER = RelicTier.COMMON;
     public static final LandingSound SFX = LandingSound.CLINK;
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath(AcupunctureKit.class.getSimpleName() + ".png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath(AcupunctureKit.class.getSimpleName() + ".png"));
 
 
     public AcupunctureKit() {
