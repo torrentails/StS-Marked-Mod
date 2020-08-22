@@ -5,8 +5,7 @@
   },
   "MarkedMod:FirstStrike": {
     "NAME": "先手打击",
-    "DESCRIPTION": "如果目标没有 印记 ，给予 !M! 层 印记 。 NL 消耗 。",
-    "EXTENDED_DESCRIPTION": ["该敌人身上已经有了印记了！"]
+    "DESCRIPTION": "如果目标没有 印记 ，给予 !M! 层 印记 。 NL 消耗 。"
   },
   "MarkedMod:GentlePulse": {
     "NAME": "柔和冲击",

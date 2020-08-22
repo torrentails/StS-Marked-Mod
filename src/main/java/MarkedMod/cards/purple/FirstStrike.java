@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.MarkPower;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
 
-import static MarkedMod.MarkedMod.makeCardPath;
-
 
 public class FirstStrike
         extends AbstractMarkedCard {
@@ -62,13 +60,13 @@ public class FirstStrike
     }
 
 
-    @Override
-    public boolean canUse(AbstractPlayer player, AbstractMonster monster) {
-        if (monster == null || monster.hasPower(MarkPower.POWER_ID) || !this.cardPlayable(monster)) {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
-        }
-
-        return true;
-    }
+    // @Override
+    // public boolean canUse(AbstractPlayer player, AbstractMonster monster) {
+    //     if (monster == null || monster.hasPower(MarkPower.POWER_ID) || !this.cardPlayable(monster)) {
+    //         this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+    //         return false;
+    //     }
+    //
+    //     return true;
+    // }
 }
