@@ -29,7 +29,8 @@ public class Puncture
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int MAGIC = 99;
+    private static final int MAGIC = 42;
+    private static final int UPGRADE_MAGIC = 27;
 
 
     public Puncture() {
@@ -44,6 +45,7 @@ public class Puncture
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(0);
+            upgradeMagicNumber(UPGRADE_MAGIC);
             initializeDescription();
         }
     }
