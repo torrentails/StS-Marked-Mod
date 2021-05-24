@@ -33,8 +33,8 @@
   },
   "MarkedMod:NorthStar": {
     "NAME": "北极星",
-    "DESCRIPTION": "给予所有敌人1层 印记 X次。 NL 触发 印记 的伤害效果X次。结束你的回合。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人1层 印记 X+1次。 NL 触发 印记 的伤害效果X+1次。结束你的回合。 NL 消耗 。"
+    "DESCRIPTION": "给予所有敌人 !M! 层 印记 X次。 NL 触发 印记 的伤害效果X次。结束你的回合。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 印记 X+1次。 NL 触发 印记 的伤害效果X+1次。结束你的回合。 NL 消耗 。"
   },
   "MarkedMod:ChiBlock": {
     "NAME": "抱元守一",

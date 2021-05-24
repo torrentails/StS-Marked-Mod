@@ -33,8 +33,8 @@
   },
   "MarkedMod:NorthStar": {
     "NAME": "North Star",
-    "DESCRIPTION": "Apply 1 *Mark X times to all enemies. NL All enemies lose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
-    "UPGRADE_DESCRIPTION": "Apply 1 *Mark X+1 times to all enemies. NL All enemies lose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
+    "DESCRIPTION": "Apply !M! *Mark X times to all enemies. NL All enemies lose HP equal to their *Mark X times. End your turn. NL *Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! *Mark X+1 times to all enemies. NL All enemies lose HP equal to their *Mark X+1 times. End your turn. NL *Exhaust."
   },
   "MarkedMod:ChiBlock": {
     "NAME": "Chi Block",
