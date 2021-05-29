@@ -28,7 +28,7 @@ public class FirstStrike
 
     private static final int COST = 0;
     private static final int MAGIC = 9;
-    private static final int UPGRADE_MAGIC = 4;
+    // private static final int UPGRADE_MAGIC = 4;
 
 
     public FirstStrike() {
@@ -42,7 +42,9 @@ public class FirstStrike
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(UPGRADE_MAGIC);
+            // upgradeMagicNumber(UPGRADE_MAGIC);
+            this.isInnate = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

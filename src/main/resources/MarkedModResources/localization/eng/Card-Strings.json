@@ -5,7 +5,8 @@
   },
   "MarkedMod:FirstStrike": {
     "NAME": "First Strike",
-    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark. NL Exhaust."
+    "DESCRIPTION": "If the target has no *Mark, Apply !M! *Mark. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL If the target has no *Mark, Apply !M! *Mark. NL Exhaust."
   },
   "MarkedMod:GentlePulse": {
     "NAME": "Gentle Pulse",
