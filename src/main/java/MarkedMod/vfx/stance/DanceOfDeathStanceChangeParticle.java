@@ -13,20 +13,19 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 
-public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
-{
+public class DanceOfDeathStanceChangeParticle
+        extends AbstractGameEffect {
     private static final float DURATION = 1.0f;
 
-    private TextureAtlas.AtlasRegion img;
-    private float x;
-    private float y;
+    private final TextureAtlas.AtlasRegion img;
+    private final float x;
+    private final float y;
     private float delayTimer;
 
 
     public DanceOfDeathStanceChangeParticle(float playerX) {
         this(playerX, null);
     }
-
 
 
     public DanceOfDeathStanceChangeParticle(float playerX, Color color) {
@@ -41,8 +40,9 @@ public class DanceOfDeathStanceChangeParticle extends AbstractGameEffect
         this.startingDuration = DURATION;
         this.duration = this.startingDuration;
 
-        this.x = MathUtils.random(-100.0F, 100.0F) * Settings.scale - (float)this.img.packedWidth / 2.0F;
-        this.y = (float)Settings.HEIGHT / 2.0F + MathUtils.random(-150.0F, 150.0F) * Settings.scale - (float)this.img.packedHeight / 2.0F;
+        this.x = MathUtils.random(-100.0F, 100.0F) * Settings.scale - (float) this.img.packedWidth / 2.0F + playerX;
+        this.y = (float) Settings.HEIGHT / 2.0F + MathUtils.random(-150.0F, 150.0F) * Settings.scale -
+                 (float) this.img.packedHeight / 2.0F;
 
         this.scale = MathUtils.random(2.2F, 2.5F) * Settings.scale;
         this.delayTimer = MathUtils.random(0.5F);

@@ -82,7 +82,9 @@ public class DanceOfDeathParticleEffect
     public void update() {
 
         if (this.duration < this.fadeDuration) {
-            this.color.a = Interpolation.fade.apply(0.0F, 1.0F, MathUtils.clamp(this.duration / this.fadeDuration, 0.0f, 1.0f));
+            this.color.a = Interpolation.fade.apply(0.0F,
+                                                    1.0F,
+                                                    MathUtils.clamp(this.duration / this.fadeDuration, 0.0f, 1.0f));
         }
 
         this.deltaY = Interpolation.sine.apply(1.0f, 0.0f, this.duration / this.maxDuration) * hitBox.height * this.vH;
