@@ -35,7 +35,7 @@ public class ChiBlock
     public ChiBlock() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        this.exhaust = true;
+        exhaust = true;
     }
 
 
@@ -43,7 +43,7 @@ public class ChiBlock
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            int magicNumberDelta = Math.round((float) this.baseMagicNumber * UPGRADE_MAGIC_MUL);
+            int magicNumberDelta = Math.round((float) baseMagicNumber * UPGRADE_MAGIC_MUL);
             upgradeMagicNumber(-magicNumberDelta);
             initializeDescription();
         }
@@ -52,7 +52,7 @@ public class ChiBlock
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster) {
-        this.applyMark(player, monster, MARK);
-        addToBot(new StunIfMarkedAction(monster, player, this.magicNumber));
+        applyMark(player, monster, MARK);
+        addToBot(new StunIfMarkedAction(monster, player, magicNumber - MARK));
     }
 }

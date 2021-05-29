@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import static com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 
 
+@SuppressWarnings("FieldMayBeFinal")
 public class DanceOfDeathParticleEffect
         extends AbstractGameEffect {
     private static AtlasRegion[] PETALS = {
@@ -25,7 +26,7 @@ public class DanceOfDeathParticleEffect
             new AtlasRegion(ImageMaster.PETAL_VFX[1], 0, 0, 32, 32)
     };
 
-    private static Hitbox hitbox = AbstractDungeon.player.hb;
+    private Hitbox hitBox;
 
     private float x;
     private float y;
@@ -56,16 +57,17 @@ public class DanceOfDeathParticleEffect
                        1.0f);
 
         this.scale = MathUtils.random(0.6F, 1.0F) * 0.5f * Settings.scale;
+        this.hitBox = AbstractDungeon.player.hb;
 
-        this.x = hitbox.cX - (float) this.img.packedWidth / 2.0F +
+        this.x = hitBox.cX - (float) this.img.packedWidth / 2.0F +
                  MathUtils.random(
-                    (-hitbox.width / 2.0F - 30.0F * Settings.scale) * 1.25f,
-                    /* -hitbox.width / 2.0F + 30.0F * Settings.scale */ 0.0f);
+                         (-hitBox.width / 2.0F - 30.0F * Settings.scale) * 1.25f,
+                         /* -hitBox.width / 2.0F + 30.0F * Settings.scale */ 0.0f);
 
-        this.y = hitbox.cY - (float) this.img.packedHeight / 2.0F * Settings.scale +
+        this.y = hitBox.cY - (float) this.img.packedHeight / 2.0F * Settings.scale +
                  MathUtils.random(
-                    hitbox.height / 2.0F + 30.0F * Settings.scale,
-                    hitbox.height / 2.0F - 10.0F * Settings.scale);
+                         hitBox.height / 2.0F + 30.0F * Settings.scale,
+                         hitBox.height / 2.0F - 10.0F * Settings.scale);
 
         this.vH = MathUtils.random(0.5f, 1.125f);
         this.vW = MathUtils.random(0.875f, 1.125f);
@@ -83,9 +85,12 @@ public class DanceOfDeathParticleEffect
             this.color.a = Interpolation.fade.apply(0.0F, 1.0F, MathUtils.clamp(this.duration / this.fadeDuration, 0.0f, 1.0f));
         }
 
-        this.deltaY = Interpolation.sine.apply(1.0f, 0.0f, this.duration / this.maxDuration) * hitbox.height * this.vH;
+        this.deltaY = Interpolation.sine.apply(1.0f, 0.0f, this.duration / this.maxDuration) * hitBox.height * this.vH;
 
-        this.deltaX = Interpolation.circleOut.apply(1.0f, 0.0f, this.duration / this.maxDuration) * hitbox.width * 1.2f * this.vW;
+        this.deltaX = Interpolation.circleOut.apply(1.0f, 0.0f, this.duration / this.maxDuration) *
+                      hitBox.width *
+                      1.2f *
+                      this.vW;
 
         this.rotation -= MathUtils.random(0.1f, 0.15f);
 

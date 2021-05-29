@@ -29,7 +29,7 @@ public class MarkPowerPatch {
     // Why on earth do they need to check the card in the base game anyways??? Seems pointless...
     @SpirePatch(clz = MarkPower.class, method = "triggerMarks")
     public static class triggerMarks {
-        private static AbstractCard bypassCard = new PressurePoints();
+        private static final AbstractCard bypassCard = new PressurePoints();
 
 
         public static void Prefix(MarkPower inst, @ByRef AbstractCard[] card) {

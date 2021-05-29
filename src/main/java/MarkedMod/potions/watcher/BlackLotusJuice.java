@@ -40,7 +40,6 @@ public class BlackLotusJuice extends AbstractPotion {
 
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
-        // TODO: as custom Keyword maybe?
         this.tips.add(new PowerTip(TipHelper.capitalize(DanceOfDeathStance.NAME), DanceOfDeathStance.DESCRIPTIONS[0]));
 
     }

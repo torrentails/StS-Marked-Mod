@@ -2,7 +2,7 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.RefundFields;
+import com.evacipated.cardcrawl.mod.stslib.variables.RefundVariable;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.PressurePointEffect;
-
-import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class OneThousandNeedles
@@ -39,9 +37,7 @@ public class OneThousandNeedles
     public OneThousandNeedles() {
         super(ID, IMG, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = MAGIC;
-        RefundFields.baseRefund.set(this, REFUND);
-        RefundFields.refund.set(this, REFUND);
-        RefundFields.isRefundUpgraded.set(this, false);
+        RefundVariable.setBaseValue(this, REFUND);
     }
 
 
@@ -50,9 +46,7 @@ public class OneThousandNeedles
         if (!upgraded) {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC);
-            RefundFields.baseRefund.set(this, RefundFields.baseRefund.get(this) + UPGRADE_REFUND);
-            RefundFields.refund.set(this, RefundFields.baseRefund.get(this));
-            RefundFields.isRefundUpgraded.set(this, true);
+            RefundVariable.upgrade(this, UPGRADE_REFUND);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

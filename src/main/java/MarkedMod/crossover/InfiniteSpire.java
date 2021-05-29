@@ -6,13 +6,10 @@ import com.megacrit.cardcrawl.characters.Watcher;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import infinitespire.patches.CardColorEnumPatch;
 
-import static MarkedMod.MarkedMod.logger;
-
 
 public class InfiniteSpire {
 
     public static void loadWatcherBlackCards() {
-        logger.info(Puncture.TEXTURE);
         BaseMod.addCard(new Puncture());
     }
 
