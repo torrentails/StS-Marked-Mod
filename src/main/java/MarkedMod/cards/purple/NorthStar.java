@@ -2,6 +2,7 @@ package MarkedMod.cards.purple;
 
 import MarkedMod.MarkedMod;
 import MarkedMod.abstracts.AbstractMarkedCard;
+import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,8 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-
-import static MarkedMod.MarkedMod.makeCardPath;
 
 
 public class NorthStar
@@ -68,6 +67,7 @@ public class NorthStar
             triggerMarks();
         }
 
+        addToBot(new LoseEnergyAction(energyOnUse));
         addToBot(new PressEndTurnButtonAction());
     }
 }
