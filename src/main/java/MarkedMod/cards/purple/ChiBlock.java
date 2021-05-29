@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static MarkedMod.MarkedMod.makeCardPath;
-
 
 public class ChiBlock
         extends AbstractMarkedCard {
@@ -27,7 +25,7 @@ public class ChiBlock
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int MAGIC = 30;
+    private static final int MAGIC = 28;
     private static final float UPGRADE_MAGIC_MUL = 0.333f;
     private static final int MARK = 12;
 
