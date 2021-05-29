@@ -186,19 +186,40 @@ public class MarkedMod
     
     @Override
     public void receiveEditStrings() {
-        logger.info("Beginning to edit strings for mod with ID: " + getModID());
+        logger.info("Begin editing strings");
+        String jsonPath = getModID() + "Resources/localization/";
+        String langCode = Settings.language.toString().toLowerCase();
 
-        String path = getModID() + "Resources/localization/" + Settings.language.toString().toLowerCase();
+        switch (langCode) {
+            case "eng":
+            case "tha":
+            case "zhs":
+                jsonPath = jsonPath + langCode;
+                break;
 
-        BaseMod.loadCustomStringsFile(CardStrings.class, path + "/Card-Strings.json");
+            default:
+                jsonPath = jsonPath + "eng";
+        }
 
-        BaseMod.loadCustomStringsFile(PowerStrings.class, path + "/Power-Strings.json");
+        BaseMod.loadCustomStringsFile(
+                CardStrings.class,
+                jsonPath + "/Card-Strings.json");
 
-        BaseMod.loadCustomStringsFile(RelicStrings.class, path + "/Relic-Strings.json");
-        
-        BaseMod.loadCustomStringsFile(PotionStrings.class, path + "/Potion-Strings.json");
+        BaseMod.loadCustomStringsFile(
+                PowerStrings.class,
+                jsonPath + "/Power-Strings.json");
 
-        BaseMod.loadCustomStringsFile(StanceStrings.class, path + "/Stance-Strings.json");
+        BaseMod.loadCustomStringsFile(
+                RelicStrings.class,
+                jsonPath + "/Relic-Strings.json");
+
+        BaseMod.loadCustomStringsFile(
+                PotionStrings.class,
+                jsonPath + "/Potion-Strings.json");
+
+        BaseMod.loadCustomStringsFile(
+                StanceStrings.class,
+                jsonPath + "/Stance-Strings.json");
     }
 
     
