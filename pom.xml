@@ -5,7 +5,7 @@
     <groupId>markedmod</groupId>
     <artifactId>MarkedMod</artifactId>
     <name>Marked Mod</name>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <description>Adds cards, relics, a potion, and even a new stance to the Watcher, all relating to the new \"Mark\"
         mechanic.
     </description>
@@ -16,7 +16,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <SlayTheSpire.version>07-30-2020</SlayTheSpire.version>
         <ModTheSpire.version>3.15.0</ModTheSpire.version>
-        <Steam.path>C:/games/_steam/steamapps</Steam.path>
+        <Steam.path>D:/games/_steam/steamapps</Steam.path>
         <Workshop.path>${Steam.path}/workshop/content/646570</Workshop.path>
     </properties>
 

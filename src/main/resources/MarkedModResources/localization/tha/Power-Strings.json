@@ -1,0 +1,24 @@
+{
+  "MarkedMod:ApplyMarkOnAttackedPower": {
+    "NAME": "จุดสกัดการโจมตี",
+    "DESCRIPTIONS": [
+      "ได้รับ #b",
+      " #yเกราะ เมื่อเพิ่มผล #รอยฆาต"
+    ]
+  },
+  "MarkedMod:GainBlockOnApplyMarkPower": {
+    "NAME": "สกัดย้อนการโจตี",
+    "DESCRIPTIONS": [
+      "เมื่อถูกศัตรูโจมตี, เพิ่มผล #b",
+      " #yรอยฆาต"
+    ]
+  },
+  "MarkedMod:GracefulMovementsPower": {
+    "NAME": "จังหวะเริงระบำ",
+    "DESCRIPTIONS": [
+      "เมื่อเริ่มต้นเทิร์น, เพิ่ม #b",
+      " #yเข็ม 1 ใบใส่มือ.",
+      " #yเข็ม 1 ใบใส่มือ"
+    ]
+  }
+}
